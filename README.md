@@ -8,7 +8,7 @@ Search recipes and curate beverage pairings to share with users
 
 
 
-### 2. User Stories (to do now)
+### 2. User Stories
 This app is for two types of users: a visitor and a logged-in user
 
 ###### Landing Page (Importance - High) (Est: 1h)
@@ -16,30 +16,78 @@ This app is for two types of users: a visitor and a logged-in user
 * I want to understand what I can do with this app (or sign up, or log in)
 * so I can decide if I want to use it
 
-###### (Example) Login Page (Importance - High) (Est: 3h)
+###### Login Page (Importance - High) (Est: 3h)
 * As a returning register user
 * I want to enter my password and username to use this app,
 * So I can have access to my account.
 
-###### (Example) Sign Up (Importance - High)  (Est: 3h)
+###### Sign Up (Importance - High)  (Est: 3h)
 * As a visitor
 * I want to register to use this app
-* So I can create a personal account.
+* So I can create a personal account to view my Vinary Pairs
 
-###### (Example) Home Page (Importance - Medium)  (Est: 2h)
+######  Home Page (Importance - High)  (Est: 2h)
+* As a visitor
+* I want to register to use this app
+* So I can create a personal account to view my Vinary Pairs
+
+######  Home Page (Importance - High)  (Est: 2h)
+
+* As a visitor
+* I want to search by keyword or dish name 
+* so I can view dishes I might want to pair
+
+######  Home Page (Importance - High)  (Est: 2h)
+
+* As a visitor
+* I want to sign up to save recipes and wine pairings
+* so I can view my saved pairs later
+
+######  Home Page (Importance - High)  (Est: 1h)
+
 * As a logged-in user,
 * I want to be able to preview the content of the app,
 * So i can decide what section I want to navigate to.
 
+######  Home Page (Importance - High)  (Est: 2h)
+
+* As a logged-in user,
+* I want to be able to search other users pairings
+* So i can gain inspiration for their own pairings
+
+######  Random Page (Importance - High)  (Est: 2h)
+
+* As a visitor
+* I want to find three random Vinary Pairs
+* so I can see what pairings other users have created
+
+###### Edit Page (Importance - High)  (Est: 2h)
+
+* As a logged-in user,
+* I want to be able to see all my Vinary Pairs
+* So i can choose which one I want to edit
+
+###### Edit Page (Importance - High)  (Est: 2h)
+
+* As a logged-in user,
+* I want to be able to return to and edit my Vinary Pairs
+* So i can change and update them as my taste evolves
 
 
-### 3. Functionality (to do now)
+
+### 3. Functionality
 The app's functionality includes:
-* (Example) Every User has the ability to create an account
+* Every User has the ability to create an account
+* Every User has the ability to search myAnimeList API
+* Every User has the ability to save and name their list 
+* Every User has the ability to search other users public lists
+* Every User has the ability to save private lists
+* Every User has the ability to search by genre, keyword, voice actor, character, airing, and user
+* Every User has the ability to click a link to watch their show
 
 
 
-### 4. Technology (done)
+### 4. Technology
 * Front-End: HTML5, CSS3, JavaScript ES6, React
 * Back-End: Node.js, Express.js, Mocha, Chai, RESTful API Endpoints, Postgres
 * Development Environment: Heroku, DBeaver
@@ -65,11 +113,28 @@ Register Page
 
 
 
-### 7. Back-end Structure - Business Objects (to do later)
-* (Example) Users (database table)
+### 7. Back-end Structure - Business Objects
+*  Users (database table)
     * id (auto-generated)
-    * username (email validation)
+    * user_name (email validation)
     * password (at least 8 chars, at least one alpha and a special character validation)
+*  Flights (database table)
+    * id (auto-generated)
+    * user_id (foreign key to users list)
+    * title (varchar 255 not null)
+    * description (varchar 255 not null)
+    * is_public (integer not null default 0)
+* Pairs (database table)
+    * id (auto-generated) 
+    * flight_id (foreign key to lootboxes list)
+    * recipe_title (varchar 255 not null) (api)
+    * recipe_image_url (varchar 255 not null) (api)
+    * recipe_description (varchar 255 not null) (api)
+    * servings (integer not null default 0) (api)
+    * beverage_title (varchar 255 not null) (api)
+    * beverage_description (varchar 255 not null) (api)
+    <!-- * beverage_image_url (varchar 255 not null) (api) -->
+    <!-- * genre (varchar 255 not null) (api) -->
 
 
 
