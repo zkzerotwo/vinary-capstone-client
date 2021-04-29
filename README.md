@@ -120,19 +120,21 @@ Register Page
     * password (at least 8 chars, at least one alpha and a special character validation)
 *  Flights (database table)
     * id (auto-generated)
-    * user_id (foreign key to users list)
+    * flight_owner (foreign key to users list)
     * title (varchar 255 not null)
     * description (varchar 255 not null)
     * is_public (integer not null default 0)
 * Pairs (database table)
     * id (auto-generated) 
-    * flight_id (foreign key to lootboxes list)
+    * flight_id (foreign key to flights list)
+    * recipe_id (integer not null)
     * recipe_title (varchar 255 not null) (api)
     * recipe_image_url (varchar 255 not null) (api)
     * recipe_description (varchar 255 not null) (api)
     * servings (integer not null default 0) (api)
     * beverage_title (varchar 255 not null) (api)
     * beverage_description (varchar 255 not null) (api)
+    * url (varchar 255 not null) (api)
     <!-- * beverage_image_url (varchar 255 not null) (api) -->
     <!-- * genre (varchar 255 not null) (api) -->
 
