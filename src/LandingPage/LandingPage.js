@@ -1,5 +1,5 @@
 import React from 'react'
-// import SearchBar from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 // import Footer from '../Footer/Footer'
 import NavBar from '../NavBar'
 // import LootboxSearchBar from '../LootboxSearchBar/LootboxSearchBar'
@@ -28,7 +28,8 @@ export default class LandingPage extends React.Component {
                 <div className="intro-card">
                     <p>Curate your own superstar food and beverage pairings on the fly! Search the database for delicious recipes and save them to your account with a beverage pairing of your choice. Wine? A cocktail? A tall glass of water? Youru call, but every pairing is a Vinary Pair.</p>
                 </div>
-
+                <SearchBar />
+            
 
                 {this.state.barToggle ? <>
                     <button onClick={() => this.toggleSearchBar()}>
