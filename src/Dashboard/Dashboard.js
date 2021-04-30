@@ -2,6 +2,7 @@ import React from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
 import NewFlight from '../NewFlight/NewFlight'
+import Flight from '../Flight/Flight'
 import Navbar from '../NavBar'
 
 export default class Dashboard extends React.Component {
@@ -60,7 +61,7 @@ export default class Dashboard extends React.Component {
             window.location = '/'
         }
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        // console.log(getDropsInFlights)
+        console.log(getUserFlightsUrl)
         fetch(getUserFlightsUrl)
             .then((flights) => {
                 if (!flights.ok)
@@ -87,7 +88,7 @@ export default class Dashboard extends React.Component {
         const userFlights = pulledFlights.map(flight => {
             return (
                 <li className="dash_flight_list">
-                    {/* <UserFlight key={flight.id} userFlight={flight} /> */}
+                    <Flight key={flight.id} flight={flight} />
                 </li>
             )
         })
@@ -99,7 +100,7 @@ export default class Dashboard extends React.Component {
                 <div className="create_flight"></div>
                 <NewFlight />
                 <ul className="flights_list">
-                    // {/* {userFlights} */}
+                    {userFlights}
                 </ul>
                 <button
                     className='_deflightte'
