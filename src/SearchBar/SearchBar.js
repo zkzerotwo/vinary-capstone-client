@@ -62,12 +62,12 @@ export default class SearchBar extends React.Component {
         this.setState({
             searchResults: []
         })
-        console.log(this.state.queryParams, "new check")
+        // console.log(this.state.queryParams, "new check")
         // const queryOptions = this.formatQueryParams(this.state.queryParams)
         const endpoint = `${config.SEARCH_ENDPOINT}`
         const pass = `${config.SEARCH_TOKEN}`
         const query = this.formatQueryParams(this.state.queryParams)
-        console.log(query, "submitqueryCheck")
+        // console.log(query, "submitqueryCheck")
         // this.state.search
         const options = {
             "method": "GET",
@@ -77,7 +77,7 @@ export default class SearchBar extends React.Component {
             }
         }
         const fullUrl = endpoint + "?" + query
-        console.log(fullUrl, "url check")
+        // console.log(fullUrl, "url check")
         fetch(fullUrl,
             options)
             .then(response => {
@@ -99,7 +99,7 @@ export default class SearchBar extends React.Component {
             });
     }
     updateDietType(type) {
-        console.log(type, "dropdown")
+        // console.log(type, "dropdown")
         this.setState({
             queryParams: {
                 query: this.state.queryParams.query,
@@ -130,7 +130,7 @@ export default class SearchBar extends React.Component {
         })
     }
     updateSearchQuery(find) {
-        console.log(find, "burger")
+        // console.log(find, "burger")
         this.setState({
             queryParams: {
                 query: find,
@@ -145,7 +145,7 @@ export default class SearchBar extends React.Component {
         })
     }
     render() {
-        console.log(this.state.queryParams, "context check")
+        // console.log(this.state.queryParams, "context check")
         // console.log(this.state.imageUrlBase, "image")
         const imageBase = this.state.imageUrlBase
         const resultsList = this.state.searchResults

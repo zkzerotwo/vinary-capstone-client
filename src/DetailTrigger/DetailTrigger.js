@@ -1,4 +1,5 @@
 import React from 'react'
+import config from '../config'
 
 class DetailTrigger extends React.Component {
     constructor(props) {
@@ -14,10 +15,11 @@ class DetailTrigger extends React.Component {
         return newLine
     }
     componentDidMount() {
-        
-        const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/` + this.props.recipeId + `/information`
-        // console.log(url, "urlcheck")
-        fetch(url, {
+        const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
+        const entryUrl = `${entryEndpoint}/${this.props.entry.id}/information`
+        // const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/` + this.props.entry.id + `/information`
+        // console.log(entryUrl, "urlcheck")
+        fetch(entryUrl, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
@@ -47,7 +49,6 @@ class DetailTrigger extends React.Component {
                 
                 {newLine}
                 
-                {/* {this.newlineText()} */}
             </div>
 
         )
