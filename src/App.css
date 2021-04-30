@@ -80,7 +80,8 @@ img {
 }
 
 .search_card {
-  
+  display: flex;
+  flex-direction: row;
 }
 
 .users_flights {
