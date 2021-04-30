@@ -43,25 +43,31 @@ export default class SearchBar extends React.Component {
     static defaultProps = {
     }
 
+    // formatQueryParams(params) {
+    //     let searchParams = []
+    //     searchParams = params
+    //     console.log(params, "queryczech")
+    //     const queryItems = Object.keys(params)
+    //         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    //     return queryItems.join('&');
+    // }
     formatQueryParams(params) {
-        let searchParams = []
-        searchParams = params
-        console.log(params, "queryczech")
         const queryItems = Object.keys(params)
             .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-        return queryItems.join('&');
+        return queryItems.join('&')
     }
     handleSubmit(e) {
         e.preventDefault();
-        // console.log(this.state)
+        // console.log(this.state, "submit state check")
         this.setState({
             searchResults: []
         })
-        const queryOptions = this.formatQueryParams(this.state.queryParams)
+        console.log(this.state.queryParams, "new check")
+        // const queryOptions = this.formatQueryParams(this.state.queryParams)
         const endpoint = `${config.SEARCH_ENDPOINT}`
         const pass = `${config.SEARCH_TOKEN}`
-        const query = this.formatQueryParams(queryOptions)
-        console.log(queryOptions, "submitqueryCheck")
+        const query = this.formatQueryParams(this.state.queryParams)
+        console.log(query, "submitqueryCheck")
         // this.state.search
         const options = {
             "method": "GET",
@@ -93,34 +99,53 @@ export default class SearchBar extends React.Component {
             });
     }
     updateDietType(type) {
-        console.log(type, "selected")
+        console.log(type, "dropdown")
         this.setState({
             queryParams: {
-                diet: type
-            }
+                query: this.state.queryParams.query,
+                diet: this.state.queryParams.diet,
+                exclude: this.state.queryParams.exclude,
+                allergies: this.state.queryParams.allergies,
+                number: this.state.queryParams.number,
+                offset: this.state.queryParams.offset,
+                type: type
+            },
             
         })
     }
     updateAllergyType(allergen) {
-        console.log(allergen, "selected")
+        // console.log(allergen, "selected")
         this.setState({
             queryParams: {
-                allergies: allergen
-            }
+                query: this.state.queryParams.query,
+                diet: this.state.queryParams.diet,
+                exclude: this.state.queryParams.exclude,
+                allergies: allergen,
+                number: this.state.queryParams.number,
+                offset: this.state.queryParams.offset,
+                type: this.state.queryParams.type
+            },
+            
             
         })
     }
     updateSearchQuery(find) {
-        // console.log(find, "queryCheck1")
+        console.log(find, "burger")
         this.setState({
             queryParams: {
-                query: find
-            }
+                query: find,
+                diet: this.state.queryParams.diet,
+                exclude: this.state.queryParams.exclude,
+                allergies: this.state.queryParams.allergies,
+                number: this.state.queryParams.number,
+                offset: this.state.queryParams.offset,
+                type: this.state.queryParams.type
+            },
 
         })
     }
     render() {
-        // console.log(this.state.queryParams, "context check")
+        console.log(this.state.queryParams, "context check")
         // console.log(this.state.imageUrlBase, "image")
         const imageBase = this.state.imageUrlBase
         const resultsList = this.state.searchResults

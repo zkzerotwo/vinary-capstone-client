@@ -1,15 +1,14 @@
 import React from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
-// import Lootbox from '../LootBox/LootBox'
-// import CreateLootbox from '../CreateLootbox/CreateLootbox'
+import NewFlight from '../NewFlight/NewFlight'
 import Navbar from '../NavBar'
 
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lootboxes: [],
+            flights: [],
             youSure: false
         }
     }
@@ -60,50 +59,50 @@ export default class Dashboard extends React.Component {
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
         }
-        let getUserLootboxesUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/lootboxes`
-        // console.log(getDropsInLootboxes)
-        fetch(getUserLootboxesUrl)
-            .then((lootboxes) => {
-                if (!lootboxes.ok)
-                    return lootboxes.json().then(e => Promise.reject(e));
-                return lootboxes.json()
+        let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
+        // console.log(getDropsInFlights)
+        fetch(getUserFlightsUrl)
+            .then((flights) => {
+                if (!flights.ok)
+                    return flights.json().then(e => Promise.reject(e));
+                return flights.json()
             })
-            .then((lootboxes) => {
-                console.log(lootboxes, "lootbox list")
+            .then((flights) => {
+                console.log(flights, "flight list")
 
                 this.setState({
-                    lootboxes: lootboxes.lootboxes
-                    // lootboxesByOwner(lootboxes, currentUser)
+                    flights: flights.flights
+                    // flightsByOwner(flights, currentUser)
                 })
 
             })
             .catch(
                 (error => this.setState({ error }))
             )
-        // console.log(this.state.lootboxes, "state check")
+        // console.log(this.state.flights, "state check")
     }
     render() {
 
-        const pulledBoxes = this.state.lootboxes
-        const userLootboxes = pulledBoxes.map(box => {
+        const pulledFlights = this.state.flights
+        const userFlights = pulledFlights.map(flight => {
             return (
-                <li className="dash_box_list">
-                    {/* <Lootbox key={box.id} lootbox={box} /> */}
+                <li className="dash_flight_list">
+                    {/* <UserFlight key={flight.id} userFlight={flight} /> */}
                 </li>
             )
         })
-        // console.log(pulledBoxes, "loot id czech")
+        // console.log(pulledFlights, "loot id czech")
         return (
-            <section className="users_lootboxes">
+            <section className="users_flights">
                 <Navbar />
                 <h2>Cache Board</h2>
-                <div className="create_lootbox"></div>
-                {/* <CreateLootbox /> */}
-                <ul className="lootboxes_list">
-                    {/* {userLootboxes} */}
+                <div className="create_flight"></div>
+                <NewFlight />
+                <ul className="flights_list">
+                    // {/* {userFlights} */}
                 </ul>
                 <button
-                    className='_delootboxete'
+                    className='_deflightte'
                     type='button'
                     onClick={(e) => { if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
                     {' '}
