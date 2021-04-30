@@ -87,28 +87,30 @@ export default class Dashboard extends React.Component {
         const pulledFlights = this.state.flights
         const userFlights = pulledFlights.map(flight => {
             return (
-                <li className="dash_flight_list">
-                    <Flight key={flight.id} flight={flight} />
+                <li key={flight.id} className="flight_display box">
+                    <Flight flight={flight} />
                 </li>
             )
         })
-        // console.log(pulledFlights, "loot id czech")
+        console.log(pulledFlights, "loot id czech")
         return (
-            <section className="users_flights">
-                <Navbar />
-                <h2>Cache Board</h2>
-                <div className="create_flight"></div>
-                <NewFlight />
-                <ul className="flights_list">
-                    {userFlights}
-                </ul>
-                <button
-                    className='_deflightte'
-                    type='button'
-                    onClick={(e) => { if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
-                    {' '}
+            <section className="users_flights foot">
+                <div className='_deflightte'>
+                    <Navbar />
+                    <h2>Cache Board</h2>
+                    <div className="create_flight"></div>
+                    <NewFlight />
+                    <ul className="flights_list">
+                        {userFlights}
+                    </ul>
+                    <button
+                        
+                        type='button'
+                        onClick={(e) => { if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
+                        {' '}
         Delete User
       </button>
+                </div>
             </section>
         )
     }

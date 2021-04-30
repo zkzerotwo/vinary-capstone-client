@@ -67,7 +67,7 @@ export default class Flight extends React.Component {
         const flightPairs = this.state.pairs
         const pairRender = flightPairs.map(pair => {
             return <li
-                className="loot_pair"
+                className="flight_pair box"
                 key={pair.id}>
                 <Pairs
                     pair={pair}
@@ -77,7 +77,7 @@ export default class Flight extends React.Component {
         })
         // console.log(flightPairs, "Second check")
         return (
-            <section className="flight_display">
+            <section className="flight_container">
                 <div className="flight_header">
                     <h1>{this.props.flight.title}</h1>
                     <h4>{this.props.flight.description}</h4>

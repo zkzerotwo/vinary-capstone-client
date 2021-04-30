@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component {
     }
     render() {
         return (
-            <section className="landing">
+            <section className="landing foot">
                 <header className="App-header">
                     <NavBar />
                 </header>

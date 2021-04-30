@@ -15,30 +15,59 @@ class DetailTrigger extends React.Component {
         return newLine
     }
     componentDidMount() {
+        console.log(this.props)
+
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const entryUrl = `${entryEndpoint}/${this.props.entry.id}/information`
+        const entryUrl2 = `${entryEndpoint}/${this.props.entry.recipe_id}/information`
         // const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/` + this.props.entry.id + `/information`
         // console.log(entryUrl, "urlcheck")
-        fetch(entryUrl, {
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
-                "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-            }
-        })
-            .then(response => response.json()
+        if (!this.props.dash) {
+            fetch(entryUrl, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
+                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+                }
+            })
+                .then(response => response.json()
 
-            )
-            .then(response =>
+                )
+                .then(response =>
 
-                this.setState({
-                    summary: response.summary,
-                    instructions: response.instructions
+                    this.setState({
+                        summary: response.summary,
+                        instructions: response.instructions
+                    })
+                )
+                .catch(err => {
+                    console.error(err);
                 })
-            )
-            .catch(err => {
-                console.error(err);
-            });
+        } else {
+            fetch(entryUrl2, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
+                    "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
+                }
+            })
+                .then(response => response.json()
+
+                )
+                .then(response =>
+
+                    this.setState({
+                        summary: response.summary,
+                        instructions: response.instructions
+                    })
+                )
+                .catch(err => {
+                    console.error(err);
+                })
+        }
+
+
+
     }
     render() {
         const text = this.state.instructions;
@@ -46,9 +75,9 @@ class DetailTrigger extends React.Component {
         console.log(newLine)
         return (
             <div>
-                
+
                 {newLine}
-                
+
             </div>
 
         )

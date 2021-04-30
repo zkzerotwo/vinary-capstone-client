@@ -20,6 +20,10 @@ export default class ExtendFlight extends React.Component {
                 value: '',
                 touched: false
             },
+            flight_id: {
+                value: 0,
+                touched: true
+            },
             // malId: '',
             // pairType: '',
             beverageTitle: {
@@ -41,7 +45,7 @@ export default class ExtendFlight extends React.Component {
     }
     updateFlightId = (flightId) => {
         this.setState({
-            flightId: {
+            flight_id: {
                 value: flightId,
                 touched: true
             }
@@ -84,14 +88,14 @@ export default class ExtendFlight extends React.Component {
     //     })
     //     // console.log(type)
     // }
-    updateBeverageTitle = (url) => {
+    updateBeverageTitle = (title) => {
         this.setState({
-            referenceUrl: {
-                value: url,
+            beverageTitle: {
+                value: title,
                 touched: true
             }
         })
-        // console.log(url)
+        console.log(title)
     }
     // updateImageUrl = (imageUrl) => {
     //     this.setState({
@@ -116,7 +120,7 @@ export default class ExtendFlight extends React.Component {
             .then((flights) => {
                 console.log(flights, "flight list")
                 this.setState({
-                    flights: flights
+                    flights: flights.flights
                 })
             })
             .catch(
@@ -136,7 +140,9 @@ export default class ExtendFlight extends React.Component {
         // console.log(entryUrl)
         const bevTitle = this.state.beverageTitle.value
         const bevDescription = this.state.beverageDescription.value
-        // const flightId = this.state.flightId.value
+        console.log(bevTitle, bevDescription, "titlechek")
+        const flightId = parseInt(this.state.flight_id.value)
+        console.log(flightId)
         // Fetch data from recipe ID
         fetch(entryUrl, {
             "method": "GET",
@@ -160,16 +166,17 @@ export default class ExtendFlight extends React.Component {
                 const imageUrl = this.props.imageUrl
                 let payload = {
                     beverage_title: bevTitle,
-                    title: title,
+                    recipe_title: title,
+                    recipe_id: id,
                     servings: servings,
-                    recipe_description: this.state.summary,
-                    instructions: this.state.instructions,
-                    flight_id: this.state.flightId,
+                    // recipe_description: this.state.summary,
+                    // instructions:  this.state.instructions,
+                    flight_id: flightId,
                     beverage_description: bevDescription,
                     url: sourceUrl,
                     recipe_image_url: imageUrl
                 }
-                // console.log(payload, "payload")
+                console.log(payload, "payload")
                 fetch(`${config.AUTH_ENDPOINT}/pairs`, {
                     method: 'POST',
                     headers: {

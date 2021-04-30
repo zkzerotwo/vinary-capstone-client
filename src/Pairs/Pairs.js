@@ -1,5 +1,6 @@
 import React from 'react'
 import config from '../config'
+import DetailTrigger from '../DetailTrigger/DetailTrigger'
 
 export default class Pairs extends React.Component {
     constructor(props) {
@@ -44,23 +45,33 @@ export default class Pairs extends React.Component {
         const pair = this.props.pair
         return (
             <>
-                <h3>
-                    {this.props.pair.pair_name}
-                </h3>
-                <img alt={this.props.pair.pair_description} src={this.props.pair.image_url} />
-                <p>
-                    {pair.pair_description}
-                </p>
-                <a href={pair.url}>
-                    Learn More
+                <div>
+                    <h3>
+                        {pair.recipe_title}
+                    </h3>
+                    <img id="flight_image" alt={pair.recipe_title} src={pair.recipe_image_url} />
+                </div>
+                <div>
+                    <DetailTrigger dash={this.state.dash}
+                    entry={pair}
+                    />
+                    <p>
+                        {pair.beverage_title}
+                    </p>
+                    <p>
+                        {pair.beverage_description}
+                    </p>
+                    <a href={pair.url}>
+                        Learn More
                     </a>
-                <button
-                    className='pair_delete'
-                    type='button'
-                    onClick={this.handleClickDelete}>
-                    {' '}
+                    <button
+                        className='pair_delete'
+                        type='button'
+                        onClick={this.handleClickDelete}>
+                        {' '}
                          Delete Pair
                 </button>
+                </div>
 
             </>
         )
@@ -69,7 +80,7 @@ export default class Pairs extends React.Component {
     render() {
         // console.log(this.props.pair, "pair props")
         // console.log(this.state.dash, "dash check")
-        console.log(this.props.location)
+        // console.log(this.props.location)
         const check = this.state.dash
         const pair = this.props.pair
         // console.log(this.props.search, "check check")
@@ -81,7 +92,7 @@ export default class Pairs extends React.Component {
                             {pair.pair_name}
                         </h3>
 
-                        <img alt={pair.pair_name} src={pair.image_url} />
+                        <img alt={pair.pair_name} src={pair.recipe_image_url} />
                         <p>
                             {pair.pair_description}
                         </p>

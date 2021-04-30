@@ -133,7 +133,7 @@ export default class NewFlight extends React.Component {
         // console.log(this.state.flights, this.state.owner.value, "Create loot check")
         return (
             <section>
-                <form className="create_flight" onSubmit={this.handleSubmit}>
+                <form className="create_flight box" onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor='flightTitle'>
                             Create a New Flight

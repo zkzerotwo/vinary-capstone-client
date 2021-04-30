@@ -22,13 +22,16 @@ export default class ResultBar extends React.Component {
             // console.log(entry)
             // console.log(imgUrl, "image check")
             return (
-                <li className="search_card" key={entry.id}>
+                <li className="search_card box" key={entry.id}>
 
                     <div>
+
                         <p>{entry.title}</p>
                         <p>{entry.synopsis}</p>
                         <img alt={entry.title} src={imgUrl} />
-                        <DetailTrigger  entry={entry} />
+                    </div>
+                    <div>
+                        <DetailTrigger entry={entry} />
                         <a href={entry.sourceUrl}>Learn More</a>
                         {TokenService.hasAuthToken() ? <ExtendFlight imageUrl={imgUrl} entry={entry} /> : ''}
                     </div>
