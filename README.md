@@ -359,7 +359,7 @@ Search Results Page
 
 
 
-### 9. Screenshots (to do later)
+### 9. Screenshots
 Landing Page
 :-------------------------:
 ![Landing Page](/github-images/screenshots/landing.png)
