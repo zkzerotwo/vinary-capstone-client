@@ -49,15 +49,12 @@ export default class SearchBar extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        // console.log(this.state, "submit state check")
         this.setState({
             searchResults: []
         })
-        // console.log(this.state.queryParams, "new check")
         const endpoint = `${config.SEARCH_ENDPOINT}`
         const pass = `${config.SEARCH_TOKEN}`
         const query = this.formatQueryParams(this.state.queryParams)
-        // console.log(query, "submitqueryCheck")
         const options = {
             "method": "GET",
             "headers": {
@@ -66,7 +63,6 @@ export default class SearchBar extends React.Component {
             }
         }
         const fullUrl = endpoint + "?" + query
-        // console.log(fullUrl, "url check")
         fetch(fullUrl,
             options)
             .then(response => {
@@ -77,7 +73,6 @@ export default class SearchBar extends React.Component {
             })
             .then(response => response.json())
             .then(response => {
-                // console.log(response.results, response.baseUri, "response")
                 this.setState({
                     searchResults: response.results,
                     imageUrlBase: response.baseUri
@@ -88,7 +83,6 @@ export default class SearchBar extends React.Component {
             });
     }
     updateDietType(type) {
-        // console.log(type, "dropdown")
         this.setState({
             queryParams: {
                 query: this.state.queryParams.query,
@@ -103,7 +97,6 @@ export default class SearchBar extends React.Component {
         })
     }
     updateAllergyType(allergen) {
-        // console.log(allergen, "selected")
         this.setState({
             queryParams: {
                 query: this.state.queryParams.query,
@@ -119,7 +112,6 @@ export default class SearchBar extends React.Component {
         })
     }
     updateSearchQuery(find) {
-        // console.log(find, "burger")
         this.setState({
             queryParams: {
                 query: find,
@@ -134,8 +126,6 @@ export default class SearchBar extends React.Component {
         })
     }
     render() {
-        // console.log(this.state.queryParams, "context check")
-        // console.log(this.state.imageUrlBase, "image")
         const imageBase = this.state.imageUrlBase
         const resultsList = this.state.searchResults
         const dietType = this.state.dietOptions
@@ -150,8 +140,6 @@ export default class SearchBar extends React.Component {
                     <option key={select.toString()} value={select}>{select}</option>
                 )
             })
-        // console.log(dietType, "checking search type")
-        // console.log(this.state, "state check")
         return (
             <section className='search-bar'>
                 <form className="recipe_search" onSubmit={e => this.handleSubmit(e)}>

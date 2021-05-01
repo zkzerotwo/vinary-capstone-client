@@ -11,13 +11,9 @@ export default class ResultBar extends React.Component {
         }
     }
     render() {
-        // console.log(this.props, "prop check")
         const base = this.props.imgBaseUrl
-        // console.log(this.state.summary, "results props")
         const entries = this.props.results.map(entry => {
             const imgUrl = base + entry.image
-            // console.log(entry)
-            // console.log(imgUrl, "image check")
             return (
                 <li className="search_card box" key={entry.id}>
                     <div className="search-wrap">

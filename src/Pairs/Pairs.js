@@ -13,7 +13,6 @@ export default class Pairs extends React.Component {
     handleClickDelete = e => {
         e.preventDefault()
         const pairId = this.props.pair.id
-        // console.log(pairId, "delete id")
         fetch(`${config.AUTH_ENDPOINT}/pairs/${pairId}`, {
             method: 'DELETE',
             headers: {
@@ -58,10 +57,6 @@ export default class Pairs extends React.Component {
                     </h3>
                     <img id="flight_image" onClick={() => this.toggleRecipe()}alt={pair.recipe_title} src={pair.recipe_image_url} />
                 </div>
-
-                {/* { this.state.stepToggle === false ? <></> : <DetailTrigger dash={this.state.dash}
-                        entry={pair}
-                    /> } */}
                 <div className="recipe-holder">
                     <DetailTrigger dash={this.state.dash}
                         entry={pair}
@@ -92,12 +87,8 @@ export default class Pairs extends React.Component {
     }
 
     render() {
-        // console.log(this.props.pair, "pair props")
-        // console.log(this.state.dash, "dash check")
-        // console.log(this.props.location)
         const check = this.state.dash
         const pair = this.props.pair
-        // console.log(this.props.search, "check check")
         return (
             <div className="pair_list">
                 {check ? this.lootSearchPair() :

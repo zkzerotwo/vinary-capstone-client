@@ -106,7 +106,7 @@ Dashboard Page
 ![Dashboard Page](/github-images/wireframes/dashboard.png)
 Search Results Page
 :-------------------------:
-![Search Results Page](/github-images/wireframes/search-results.png)
+![Search Results Page](/github-images/wireframes/search-result.png)
 
 
 
@@ -371,7 +371,7 @@ Dashboard Page
 ![Dashboard Page](/github-images/screenshots/dashboard.png)
 Search Results Page
 :-------------------------:
-![Search Results Page](/github-images/screenshots/search-results.png)
+![Search Results Page](/github-images/screenshots/search-result.png)
 
 
 
