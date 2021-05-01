@@ -61,9 +61,10 @@ body {
 }
 
 .intro-card {
-  /* margin: auto;
+  margin: 5px;
+  /* margin: auto; */
   padding: 5px;
-  border-width: 2px;
+  /* border-width: 2px;
   border-style: ridge;
   border-color: silver;
   width: 50%; */
@@ -71,11 +72,13 @@ body {
 
 .welcome {
   /* color: white; */
-  width: 100%;
+  width: 75%;
   font-size: 15vw;
+  border-radius: 50px;
+  margin: auto;
   padding-top: 5px;
   padding-bottom: 5px;
-  background: linear-gradient(
+  background: linear-gradient( 
 90deg
 , rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
 }
@@ -93,6 +96,9 @@ body {
     , rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
 }
 
+form {
+  font-size: 4vw;
+}
 input {
   border-width: 2px;
   border-style: ridge;
@@ -101,7 +107,8 @@ input {
   padding-left: 15px;
   padding-right: 15px;
   margin: 5px;
-  width: 95%;
+  font-size: 4vw;
+  /* width: 95%; */
 }
 
 select {
@@ -126,6 +133,7 @@ button {
 
 textarea {
   width: 95%;
+  font-size: 4vw;
   height: 75px;
   padding-left: 20px;
   padding-right: 20px;
@@ -332,6 +340,23 @@ section.footer {
   padding: 10px;
   flex: 0 0 125vw;
 }
+.search-wrap {
+  /* display: table; */
+  width: 150vw;
+}
+textarea {
+  width: 95%;
+  /* font-size: 4vw; */
+  height: 10vw;
+  /* padding-left: 20px;
+  padding-right: 20px;
+  border-width: 2px;
+  border-style: ridge;
+  border-color: silver;
+  border-radius: 50px;
+  display: block;
+  margin: auto; */
+}
   /* li.loot_drop {
     width: 49%;
   }
@@ -356,6 +381,33 @@ section.footer {
 .recipe-instruc {
   height: 50vw;
 }
+.intro-card {
+  /* margin: 5px; */
+  width: 50vw;
+  font-size: 3vw;
+  margin: auto;
+  margin-top: 5px;
+  /* padding: 5px; */
+}
+input {
+  /* border-width: 2px;
+  border-style: ridge;
+  border-color: silver;
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px; */
+  font-size: 3vw;
+  /* width: 95%; */
+}
+.search-wrap {
+  /* display: table; */
+  width: 125vw;
+}
+.recipe-instruc {
+  height: 30vw;
+  font-size: 2vw;
+}
   /* li.loot_drop {
     width: 32%;
   }
@@ -379,6 +431,21 @@ section.footer {
   .recipe-instruc {
     height: 40vw;
 }
+.search-wrap {
+  /* display: table; */
+  width: 115vw;
+}
+textarea {
+  /* width: 95%; */
+  font-size: 2vw;
+  /* height: 10vw; */
+}
+input {
+  font-size: 2vw;
+  /* width: 95%; */
+}
+
+
   /* .intro-card {
     width: 32%;
   } */
@@ -392,6 +459,10 @@ section.footer {
   }
   .recipe-instruc {
     height: 30vw;
+}
+.search-wrap {
+  /* display: table; */
+  width: 100vw;
 }
   /* li.loot_drop {
     width: 24%;
