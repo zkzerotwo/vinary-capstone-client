@@ -17,11 +17,11 @@ export default class Flight extends React.Component {
     }
     //Get pairs inside flights
     componentDidMount() {
-        console.log(this.props, "prop check")
+        // console.log(this.props, "prop check")
         // let currentUser = TokenService.getUserId();
         let getPairsInFlights = `${config.AUTH_ENDPOINT}/flights/${this.props.flight.id}/saved`
         // let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        console.log(getPairsInFlights, "pair list url")
+        // console.log(getPairsInFlights, "pair list url")
         fetch(getPairsInFlights)
             .then(pairs => {
                 if (!pairs.ok)
@@ -38,13 +38,13 @@ export default class Flight extends React.Component {
                 error
             }))
 
-        console.log(this.state, "fetch check")
+        // console.log(this.state, "fetch check")
     }
     //delete flight
     handleClickDelete = e => {
         e.preventDefault()
         const flightId = this.props.flight.id
-        console.log(flightId, "delete id")
+        // console.log(flightId, "delete id")
         fetch(`${config.AUTH_ENDPOINT}/flights/${flightId}`, {
             method: 'DELETE',
             headers: {

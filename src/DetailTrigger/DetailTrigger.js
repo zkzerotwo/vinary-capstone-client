@@ -90,8 +90,8 @@ class DetailTrigger extends React.Component {
     }
     render() {
         const text = this.state.instructions;
-        console.log(this.props.entry)
-        console.log(text, "line check")
+        // console.log(this.props.entry)
+        // console.log(text, "line check")
         return (
             <ul className="recipe-instruc">
                 <li>{text}</li>
