@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component {
                 <div className="intro-card">
                     <p>
                         Curate your own superstar food and beverage pairings on the fly! Search the database for delicious recipes and save them to your account with a beverage pairing of your choice. Wine? A cocktail? Create world's next great Vinary Pairing.
-                        </p>
+                    </p>
                 </div>
                 <SearchBar />
             </section>

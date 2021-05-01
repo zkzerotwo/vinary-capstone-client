@@ -1,7 +1,6 @@
 import React from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
-// import { flightsByOwner } from '../flight-handlers'
 import ValidationError from '../ValidationError'
 
 export default class NewFlight extends React.Component {
@@ -58,6 +57,7 @@ export default class NewFlight extends React.Component {
         })
     }
     componentDidMount() {
+        //Get flights for this user
         let currentUser = TokenService.getUserId();
         console.log(currentUser, "user id")
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
