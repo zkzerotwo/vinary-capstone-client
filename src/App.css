@@ -101,7 +101,7 @@ button {
 }
 
 img {
-  width: 100%
+  /* width: 100% */
 }
 
 .Login {
@@ -118,6 +118,32 @@ img {
 .search_card {
   display: flex;
   flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  list-style: none;
+  width: 100vw;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: auto;
+  list-style: none; */
+}
+
+.search_poster {
+  width: 50vw
+}
+
+.search-deets {
+  width: 50vw
 }
 
 .users_flights {
@@ -218,3 +244,98 @@ section.footer {
   padding: 30px;
   padding-bottom: 75px;
 } */
+
+@media only screen and (min-width: 320px) {
+  body {
+    border: 3px solid purple;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    border: 3px solid green;
+  }
+  .recipe-poster {
+    display: table-cell;
+    width: 45%;
+}
+.flight_pair {
+  padding: 10px;
+  flex: 0 0 125vw;
+}
+  /* li.loot_drop {
+    width: 49%;
+  }
+  .intro-card {
+    width: 74%;
+  }
+  input {
+    width: 75%;
+  } */
+}
+
+/*Android landscape*/
+
+@media only screen and (min-width: 640px) {
+  body {
+    border: 3px solid pink;
+  }
+  .flight_pair {
+    padding: 10px;
+    flex: 0 0 75vw;
+}
+.recipe-instruc {
+  height: 50vw;
+}
+  /* li.loot_drop {
+    width: 32%;
+  }
+  .intro-card {
+    width: 32%;
+  }
+  input {
+    width: 50%;
+  }
+  .search-results h3 {
+    width: 50%;
+  } */
+}
+
+/*iPad potrait*/
+
+@media only screen and (min-width: 768px) {
+  body {
+    border: 3px solid red;
+  }
+  .recipe-instruc {
+    height: 40vw;
+}
+  /* .intro-card {
+    width: 32%;
+  } */
+}
+
+/*iPad lanscape / small laptop*/
+
+@media only screen and (min-width: 1024px) {
+  body {
+    border: 3px solid blue;
+  }
+  .recipe-instruc {
+    height: 30vw;
+}
+  /* li.loot_drop {
+    width: 24%;
+  } */
+}
+
+/*large desktop*/
+
+@media only screen and (min-width: 1600px) {
+  body {
+    border: 3px solid yellow;
+  }
+  li.loot_drop {
+    width: 19%;
+  }
+}

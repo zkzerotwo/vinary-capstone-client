@@ -24,13 +24,12 @@ export default class ResultBar extends React.Component {
             return (
                 <li className="search_card box" key={entry.id}>
 
-                    <div>
+                    <div className="search_poster">
 
                         <p>{entry.title}</p>
-                        <p>{entry.synopsis}</p>
-                        <img alt={entry.title} src={imgUrl} />
+                        <img id="flight_image" alt={entry.title} src={imgUrl} />
                     </div>
-                    <div>
+                    <div className="search-deets">
                         <DetailTrigger entry={entry} />
                         <a href={entry.sourceUrl}>Learn More</a>
                         {TokenService.hasAuthToken() ? <ExtendFlight imageUrl={imgUrl} entry={entry} /> : ''}
