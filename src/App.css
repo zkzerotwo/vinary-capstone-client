@@ -371,9 +371,9 @@ textarea {
 /*iPad lanscape / small laptop*/
 
 @media only screen and (min-width: 1024px) {
-  body {
+  /* body {
     border: 3px solid blue;
-  }
+  } */
   form {
     font-size: 1.5vw;
 }
@@ -392,7 +392,7 @@ textarea {
 /*large desktop*/
 
 @media only screen and (min-width: 1600px) {
-  body {
+  /* body {
     border: 3px solid yellow;
-  }
+  } */
 }
