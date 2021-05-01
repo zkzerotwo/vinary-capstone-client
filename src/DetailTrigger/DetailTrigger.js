@@ -6,21 +6,21 @@ class DetailTrigger extends React.Component {
         super(props)
         this.state = {
             summary: "",
-            instructions: "",
+            instructions: "Instructions \n and stuff",
             stepToggle: false
         }
     }
-    newlineText() {
-        const text = this.props.summary;
-        const newLine = text.split('\n').map(str => <p>{str}</p>);
-        return newLine
-    }
+    // newlineText() {
+    //     const text = this.props.summary;
+    //     const newLine = text.split('\n').map(str => <p>{str}</p>);
+    //     return newLine
+    // }
 
-    toggleRecipe = () => {
-        this.setState({
-            stepToggle: true
-        })
-    }
+    // toggleRecipe = () => {
+    //     this.setState({
+    //         stepToggle: true
+    //     })
+    // }
     componentDidMount() {
         console.log(this.props)
         this.mounted = true;
