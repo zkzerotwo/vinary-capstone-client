@@ -1,6 +1,5 @@
 import React from 'react'
 import Pairs from '../Pairs/Pairs'
-// import TokenService from '../services/token-service'
 import config from '../config'
 
 export default class Flight extends React.Component {
@@ -25,7 +24,6 @@ export default class Flight extends React.Component {
                 return pairs.json()
             })
             .then(pairs => {
-                // console.log(pairs, "fetch check 1")
                 this.setState({
                     pairs: pairs.pairs
                 })
@@ -33,14 +31,11 @@ export default class Flight extends React.Component {
             .catch(error => this.setState({
                 error
             }))
-
-        // console.log(this.state, "fetch check")
     }
     //delete flight
     handleClickDelete = e => {
         e.preventDefault()
         const flightId = this.props.flight.id
-        // console.log(flightId, "delete id")
         fetch(`${config.AUTH_ENDPOINT}/flights/${flightId}`, {
             method: 'DELETE',
             headers: {
@@ -60,8 +55,6 @@ export default class Flight extends React.Component {
             })
     }
     render() {
-        // console.log(this.state.pairs, "pair check")
-        // console.log(this.props, "prop check")
         const flightPairs = this.state.pairs
         const pairRender = flightPairs.map(pair => {
             return <li
@@ -73,7 +66,6 @@ export default class Flight extends React.Component {
                 />
             </li>
         })
-        // console.log(flightPairs, "Second check")
         return (
             <section className="flight_container">
                 <div className="flight_header">

@@ -1,7 +1,6 @@
 import React from 'react'
 import config from '../config'
 import TokenService from '../services/token-service'
-// import ValidationError from '../ValidationError'
 
 export default class ExtendFlight extends React.Component {
     constructor(props) {
@@ -151,7 +150,6 @@ export default class ExtendFlight extends React.Component {
     //TODO: add submission validation
     render() {
         const flightList = this.state.flights.map(flight => {
-            // console.log(flight.title)
             return (
                 <option
                     key={flight.id}
@@ -160,12 +158,9 @@ export default class ExtendFlight extends React.Component {
                 </option>
             )
         })
-        // console.log(flightList, "list of flights")
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-
-                    {/* <h4>{this.props.entryId}</h4> */}
                     <div className="pair_setup">
                         <label htmlFor='beverage_title'>
                             <h2>Bev Pairing</h2>
@@ -181,7 +176,6 @@ export default class ExtendFlight extends React.Component {
                         />
                     </div>
                     {this.state.beverageTitle.touched
-                        // && (<ValidationError message={this.validateDropName()} />)
                     }
                     <label htmlFor="description">
                        <h2>Flavor Profile</h2>
@@ -213,9 +207,6 @@ export default class ExtendFlight extends React.Component {
                     </label>
                     <button
                         type='submit'
-                    // disabled={
-                    // this.validateTitle() || 
-                    // this.validateFlightSelect()}
                     >
                         Save
     </button>

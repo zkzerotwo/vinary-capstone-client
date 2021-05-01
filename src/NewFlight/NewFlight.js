@@ -59,7 +59,6 @@ export default class NewFlight extends React.Component {
     componentDidMount() {
         //Get flights for this user
         let currentUser = TokenService.getUserId();
-        console.log(currentUser, "user id")
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
         fetch(getUserFlightsUrl)
             .then((flights) => {
@@ -68,10 +67,8 @@ export default class NewFlight extends React.Component {
                 return flights.json()
             })
             .then((flights) => {
-                console.log(flights, "flight list")
                 this.setOwner(currentUser)
                 this.setState({
-                    // flights: flightsByOwner(flights, currentUser),
 
                 })
             })
@@ -85,13 +82,11 @@ export default class NewFlight extends React.Component {
         const description = this.state.description.value
         const title = this.state.title.value
         const owner = this.state.owner.value
-        console.log(description, title, owner, "data check")
         let payload = {
             title: title,
             description: description,
             flight_owner: owner
         }
-        // console.log(payload)
         this.setState({
             error: null
         })
@@ -104,7 +99,6 @@ export default class NewFlight extends React.Component {
             body: JSON.stringify(payload),
         })
             .then((flightsRes) => {
-                console.log(flightsRes)
                 if (!flightsRes.ok) {
                     return flightsRes.json().then(e => Promise.reject(e));
                 }
@@ -113,7 +107,6 @@ export default class NewFlight extends React.Component {
 
             })
             .then((newFlight) => {
-                console.log(newFlight)
             })
 
             .catch(error => this.setState({ error }))
@@ -130,7 +123,6 @@ export default class NewFlight extends React.Component {
     }
 
     render() {
-        // console.log(this.state.flights, this.state.owner.value, "Create loot check")
         return (
             <section>
                 <form className="create_flight box" onSubmit={this.handleSubmit}>
@@ -161,7 +153,6 @@ export default class NewFlight extends React.Component {
                     ></textarea>
                     <button
                         type='submit'
-                    // disabled={this.validateTitle() || this.validateFlightSelect()}
                     >
                         Save
             </button>
