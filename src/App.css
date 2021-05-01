@@ -108,12 +108,25 @@ button {
   margin: 5px;
 }
 
+textarea {
+  width: 95%;
+  height: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 2px;
+  border-style: ridge;
+  border-color: silver;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+}
+
 .delete_flight {
   margin-bottom: 0px;
 }
 
 img {
-  width: 100%
+  /* width: 100% */
 }
 
 .Login {
@@ -124,23 +137,46 @@ img {
   background-image:  url("./images/transparency-white.png");
 }
 #flight_image {
-  height: 400px
+  width: 100%;
+  height: auto;
 }
 
 .search_card {
   display: flex;
   flex-direction: row;
-  min-height: max-content;
+  /* display: flex; */
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  list-style: none;
+  width: 100vw;
 }
 
+.entries {
+  display: flex;
+  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow: auto;
+  list-style: none; */
+}
+
+.search-wrap {
+  display: table;
+    width: 200vw;
+
+}
 .search_poster {
-  width: 30%;
-  margin: auto;
-  padding: 5px;
+  width: 120vw;
+  display: table-cell;
 }
 
-.search_poster img {
-  width: 100%;
+.search-deets {
+  width: 100vw;
+  display: table-cell;
 }
 
 .users_flights {
@@ -165,29 +201,23 @@ img {
 
 .flight_pair {
   padding: 10px;
-  flex: 0 0 50%;
-  /* height: 40%; */
+  flex: 0 0 150vw;
 }
 
 .recipe-poster {
-  /* width: 50%; */
-  flex: 0 0 13%;
-  /* position: relative; */
-  /* height: 200px;
-  width: 257px; */
-
-  
+  display: table-cell;
+  width: 50%;
 }
 
 .recipe-instruc {
-  margin: auto;
+  margin: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-around;
+  /* align-items:; */
   list-style: none;
-  overflow: auto;
-  height: 65%;
+  height: 70vw;
+  overflow: scroll;
   padding: 2px;
   /* position: absolute; */
   /* top: 0;
@@ -213,12 +243,11 @@ img {
 }
 
 .pair_list {
-  /* height: 100%; */
-  display: flex;
+  height: 100%;
+  display: table;
   width: 100%;
   flex-direction: row;
   margin: auto;
-  
 }
 
 .flight_container {
@@ -237,7 +266,9 @@ img {
 }
 
 /*Wireframe styles*/
-
+.bev_pair a {
+  color: gold;
+}
 .box {
   /* margin: auto; */
   border-style: ridge;
@@ -271,41 +302,25 @@ section.footer {
   padding-bottom: 75px;
 } */
 
-
-/*iPhone portrait*/
-
 @media only screen and (min-width: 320px) {
   body {
     border: 3px solid purple;
   }
-  .flight_pair {
-    /* padding: 10px; */
-    flex: 0 0 200vw;
-    height: 100vw;
-    /* overflow: scroll; */
-}
-.pair_list {
-  /* height: 100%; */
-  width: 200vw;
-}
-.recipe-poster {
-  /* width: 50%; */
-  flex: 0 0 50%;
-  /* position: relative; */
-}
-.recipe-holder {
-  width: 100%
-}
-/* .recipe-instruc {
-  width: 13%
-} */
 }
 
 @media only screen and (min-width: 480px) {
   body {
     border: 3px solid green;
   }
-  li.loot_drop {
+  .recipe-poster {
+    display: table-cell;
+    width: 45%;
+}
+.flight_pair {
+  padding: 10px;
+  flex: 0 0 125vw;
+}
+  /* li.loot_drop {
     width: 49%;
   }
   .intro-card {
@@ -313,7 +328,7 @@ section.footer {
   }
   input {
     width: 75%;
-  }
+  } */
 }
 
 /*Android landscape*/
@@ -323,10 +338,13 @@ section.footer {
     border: 3px solid pink;
   }
   .flight_pair {
-    /* padding: 10px; */
-    flex: 0 0 120%;
+    padding: 10px;
+    flex: 0 0 75vw;
 }
-  li.loot_drop {
+.recipe-instruc {
+  height: 50vw;
+}
+  /* li.loot_drop {
     width: 32%;
   }
   .intro-card {
@@ -337,7 +355,7 @@ section.footer {
   }
   .search-results h3 {
     width: 50%;
-  }
+  } */
 }
 
 /*iPad potrait*/
@@ -346,13 +364,12 @@ section.footer {
   body {
     border: 3px solid red;
   }
-  .flight_pair {
-    /* padding: 10px; */
-    /* flex: 0 0 105%; */
+  .recipe-instruc {
+    height: 40vw;
 }
-  .intro-card {
+  /* .intro-card {
     width: 32%;
-  }
+  } */
 }
 
 /*iPad lanscape / small laptop*/
@@ -361,10 +378,12 @@ section.footer {
   body {
     border: 3px solid blue;
   }
-
-  li.loot_drop {
+  .recipe-instruc {
+    height: 30vw;
+}
+  /* li.loot_drop {
     width: 24%;
-  }
+  } */
 }
 
 /*large desktop*/
