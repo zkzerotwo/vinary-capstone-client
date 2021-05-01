@@ -24,13 +24,10 @@ export default class ExtendFlight extends React.Component {
                 value: 0,
                 touched: true
             },
-            // malId: '',
-            // pairType: '',
             beverageTitle: {
                 value: '',
                 touched: false
             },
-            // referenceUrl: '',
             imageUrl: '',
             isAdded: false
         }
@@ -52,15 +49,6 @@ export default class ExtendFlight extends React.Component {
         })
         // console.log(flightId)
     }
-    // updateMalId = (select) => {
-    //     this.setState({
-    //         malId: {
-    //             value: select,
-    //             touched: true
-    //         }
-    //     })
-    // console.log(select)
-    // }
 
     updateBeverageDescription = (description) => {
         this.setState({
@@ -70,24 +58,6 @@ export default class ExtendFlight extends React.Component {
             }
         })
     }
-    // updateSumamry = (name) => {
-    //     this.setState({
-    //         summary: {
-    //             value: name,
-    //             touched: true
-    //         }
-    //     })
-    //     // console.log(name)
-    // }
-    // updateInstructions = (type) => {
-    //     this.setState({
-    //         instructions: {
-    //             value: type,
-    //             touched: true
-    //         }
-    //     })
-    //     // console.log(type)
-    // }
     updateBeverageTitle = (title) => {
         this.setState({
             beverageTitle: {
@@ -97,15 +67,6 @@ export default class ExtendFlight extends React.Component {
         })
         console.log(title)
     }
-    // updateImageUrl = (imageUrl) => {
-    //     this.setState({
-    //         imageUrl: {
-    //             value: imageUrl,
-    //             touched: true
-    //         }
-    //     })
-    // console.log(imageUrl)
-    // }
     componentDidMount() {
         //get user id and load flights
         let currentUser = TokenService.getUserId();
@@ -134,8 +95,6 @@ export default class ExtendFlight extends React.Component {
         // console.log(this.props.entryId)
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const { id, servings, sourceUrl, title } = this.props.entry
-        // const recipeId = this.props.entry.id
-        // const entryType = this.props.entryType
         const entryUrl = `${entryEndpoint}/${id}/information`
         // console.log(entryUrl)
         const bevTitle = this.state.beverageTitle.value
@@ -147,7 +106,7 @@ export default class ExtendFlight extends React.Component {
         fetch(entryUrl, {
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
+                "x-rapidapi-key": `${config.SEARCH_TOKEN}`,
                 "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
             }
         })
@@ -169,8 +128,6 @@ export default class ExtendFlight extends React.Component {
                     recipe_title: title,
                     recipe_id: id,
                     servings: servings,
-                    // recipe_description: this.state.summary,
-                    // instructions:  this.state.instructions,
                     flight_id: flightId,
                     beverage_description: bevDescription,
                     url: sourceUrl,
@@ -193,9 +150,6 @@ export default class ExtendFlight extends React.Component {
                         window.location = '/dashboard'
                         return pairPost.json()
                     })
-                    // .then((newFlight) => {
-                    //     console.log(newFlight)
-                    // })
                     .catch(error => this.setState({ error }))
             })
             .catch(err => {
