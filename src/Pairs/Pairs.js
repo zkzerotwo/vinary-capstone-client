@@ -55,7 +55,11 @@ export default class Pairs extends React.Component {
                     <h3>
                         {pair.recipe_title}
                     </h3>
-                    <img id="flight_image" onClick={() => this.toggleRecipe()}alt={pair.recipe_title} src={pair.recipe_image_url} />
+                    <img id="flight_image" 
+                    // onClick={() => this.toggleRecipe()} 
+                    alt={pair.recipe_title}
+                     src={pair.recipe_image_url} 
+                    />
                 </div>
                 <div className="recipe-holder">
                     <DetailTrigger dash={this.state.dash}
@@ -94,16 +98,16 @@ export default class Pairs extends React.Component {
                 {check ? this.lootSearchPair() :
                     <>
                         <h3>
-                            {pair.pair_name}
+                            {/* {pair.pair_name} */}
                         </h3>
 
-                        <img alt={pair.pair_name} src={pair.recipe_image_url} />
+                        {/* <img alt={pair.pair_name} src={pair.recipe_image_url} /> */}
                         <p>
-                            {pair.pair_description}
+                            {/* {pair.pair_description} */}
                         </p>
-                        <a href={pair.url}>
+                        {/* <a href={pair.url}>
                             Learn More
-                            </a>
+                            </a> */}
                     </>
                 }
             </div>

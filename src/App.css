@@ -294,13 +294,22 @@ textarea {
 }
 
 @media only screen and (min-width: 480px) {
-  /* body {
+  body {
     border: 3px solid green;
-  } */
+  }
   .recipe-poster {
     display: table-cell;
     width: 45%;
   }
+  form {
+    font-size: 3vw;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: auto;
+    align-items: center;
+}
   .flight_pair {
     padding: 10px;
     flex: 0 0 125vw;
@@ -317,9 +326,9 @@ textarea {
 /*Android landscape*/
 
 @media only screen and (min-width: 640px) {
-  /* body {
+  body {
     border: 3px solid pink;
-  } */
+  }
   .flight_pair {
     padding: 10px;
     flex: 0 0 75vw;
@@ -335,9 +344,15 @@ textarea {
   }
   form {
     font-size: 2vw;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: auto;
+    align-items: center;
 }
   input {
-    font-size: 3vw;
+    font-size: 2vw;
   }
   .search-wrap {
     width: 125vw;
