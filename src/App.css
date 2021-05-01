@@ -24,13 +24,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /* Static styles. Navbar, header, footer*/
 
 /* body {
   border: 3px solid white;
 } */
-
-
 
 .nav {
   margin-top: 0px;
@@ -41,11 +40,11 @@ body {
   height: 15%;
   margin-bottom: 10px;
   padding-bottom: 5px;
-  background-image:  url("./images/transparency-wine.png");
+  background-image: url("./images/transparency-wine.png");
 }
 
 .navbar-button {
-  background-image:  url("./images/transparent.jpg");
+  background-image: url("./images/transparent.jpg");
   margin: auto;
   max-width: 33%;
   min-width: 20%;
@@ -54,14 +53,12 @@ body {
 }
 
 .navbar-button a {
-  color:white
+  color: white
 }
 
 .intro-card {
   margin: 5px;
-  background: linear-gradient(
-    90deg
-    , rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background: linear-gradient( 90deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
   border-radius: 50px;
   padding: 5px;
 }
@@ -73,9 +70,7 @@ body {
   margin: auto;
   padding-top: 5px;
   padding-bottom: 5px;
-  background: linear-gradient( 
-90deg
-, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background: linear-gradient( 90deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
 }
 
 .landing {
@@ -100,10 +95,9 @@ section.footer {
 }
 
 /*Forms and buttons*/
+
 .search-params {
-  background: linear-gradient(
-    90deg
-    , rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
+  background: linear-gradient( 90deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
 }
 
 form {
@@ -111,12 +105,13 @@ form {
 }
 
 .Login {
-  background-image:  url("./images/transparency-white.png");
+  background-image: url("./images/transparency-white.png");
 }
 
 .Register {
-  background-image:  url("./images/transparency-white.png");
+  background-image: url("./images/transparency-white.png");
 }
+
 input {
   border-width: 2px;
   border-style: ridge;
@@ -166,7 +161,6 @@ textarea {
   margin-bottom: 0px;
 }
 
-
 #flight_image {
   width: 100%;
   height: auto;
@@ -190,9 +184,9 @@ textarea {
 
 .search-wrap {
   display: table;
-    width: 200vw;
-
+  width: 200vw;
 }
+
 .search_poster {
   width: 120vw;
   display: table-cell;
@@ -208,8 +202,6 @@ textarea {
   display: block;
   min-height: 100%;
 }
-
-
 
 .flight_display {
   width: 99%;
@@ -253,7 +245,7 @@ textarea {
   color: gold;
 }
 
-.bev_pair h3{
+.bev_pair h3 {
   font-style: italic;
 }
 
@@ -281,9 +273,11 @@ textarea {
 }
 
 /*Wireframe styles*/
+
 .bev_pair a {
   color: gold;
 }
+
 .box {
   border-style: ridge;
   border-color: silver;
@@ -306,18 +300,18 @@ textarea {
   .recipe-poster {
     display: table-cell;
     width: 45%;
-}
-.flight_pair {
-  padding: 10px;
-  flex: 0 0 125vw;
-}
-.search-wrap {
-  width: 150vw;
-}
-textarea {
-  width: 95%;
-  height: 10vw;
-}
+  }
+  .flight_pair {
+    padding: 10px;
+    flex: 0 0 125vw;
+  }
+  .search-wrap {
+    width: 150vw;
+  }
+  textarea {
+    width: 95%;
+    height: 10vw;
+  }
 }
 
 /*Android landscape*/
@@ -329,26 +323,29 @@ textarea {
   .flight_pair {
     padding: 10px;
     flex: 0 0 75vw;
+  }
+  .recipe-instruc {
+    height: 50vw;
+  }
+  .intro-card {
+    width: 50vw;
+    font-size: 3vw;
+    margin: auto;
+    margin-top: 5px;
+  }
+  form {
+    font-size: 2vw;
 }
-.recipe-instruc {
-  height: 50vw;
-}
-.intro-card {
-  width: 50vw;
-  font-size: 3vw;
-  margin: auto;
-  margin-top: 5px;
-}
-input {
-  font-size: 3vw;
-}
-.search-wrap {
-  width: 125vw;
-}
-.recipe-instruc {
-  height: 30vw;
-  font-size: 2vw;
-}
+  input {
+    font-size: 3vw;
+  }
+  .search-wrap {
+    width: 125vw;
+  }
+  .recipe-instruc {
+    height: 30vw;
+    font-size: 2vw;
+  }
 }
 
 /*iPad potrait*/
@@ -359,36 +356,43 @@ input {
   } */
   .recipe-instruc {
     height: 40vw;
-}
-.search-wrap {
-  width: 115vw;
-}
-textarea {
-  font-size: 2vw;
-}
-input {
-  font-size: 2vw;
-}
+  }
+  .search-wrap {
+    width: 115vw;
+  }
+  textarea {
+    font-size: 2vw;
+  }
+  input {
+    font-size: 2vw;
+  }
 }
 
 /*iPad lanscape / small laptop*/
 
 @media only screen and (min-width: 1024px) {
-  /* body {
+  body {
     border: 3px solid blue;
-  } */
+  }
+  form {
+    font-size: 1.5vw;
+}
   .recipe-instruc {
     height: 30vw;
-}
-.search-wrap {
-  width: 100vw;
-}
+  }
+  textarea {
+    width: 50%;
+    height: 10vw;
+  }
+  .search-wrap {
+    width: 100vw;
+  }
 }
 
 /*large desktop*/
 
 @media only screen and (min-width: 1600px) {
-  /* body {
+  body {
     border: 3px solid yellow;
-  } */
+  }
 }

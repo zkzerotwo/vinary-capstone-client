@@ -7,9 +7,9 @@ export default class Pairs extends React.Component {
         super(props);
         this.state = {
             dash: false,
+            stepToggle: false
         }
     }
-    //Delete pairing
     handleClickDelete = e => {
         e.preventDefault()
         const pairId = this.props.pair.id
@@ -35,12 +35,19 @@ export default class Pairs extends React.Component {
     componentDidMount() {
         this.windowCheck()
     }
+    windowCheck() {
+        if (!this.props.search) {
+            this.setState({
+                dash: true
+            })
+        }
+    }
+
     toggleRecipe = () => {
         this.setState({
             stepToggle: !this.state.stepToggle
         })
     }
-    //Display pairings for each flight
     lootSearchPair() {
         const pair = this.props.pair
         return (
@@ -49,10 +56,12 @@ export default class Pairs extends React.Component {
                     <h3>
                         {pair.recipe_title}
                     </h3>
-                    <img id="flight_image" 
-                    // onClick={() => this.toggleRecipe()}
-                    alt={pair.recipe_title} src={pair.recipe_image_url} />
+                    <img id="flight_image" onClick={() => this.toggleRecipe()}alt={pair.recipe_title} src={pair.recipe_image_url} />
                 </div>
+
+                {/* { this.state.stepToggle === false ? <></> : <DetailTrigger dash={this.state.dash}
+                        entry={pair}
+                    /> } */}
                 <div className="recipe-holder">
                     <DetailTrigger dash={this.state.dash}
                         entry={pair}
