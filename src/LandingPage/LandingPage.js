@@ -31,17 +31,7 @@ export default class LandingPage extends React.Component {
                 <SearchBar />
             
 
-                {this.state.barToggle ? <>
-                    <button onClick={() => this.toggleSearchBar()}>
-                        Search myAnimeList
-                </button>
-                    {/* <LootboxSearchBar /> */}
-                </> : <>
-                    <button onClick={() => this.toggleSearchBar()}>
-                        Search Lootboxes
-                </button> {/* <SearchBar />  */}
-                </>
-                }
+         
             </section>
         )
     }

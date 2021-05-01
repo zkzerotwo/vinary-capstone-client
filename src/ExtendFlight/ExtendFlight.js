@@ -190,6 +190,7 @@ export default class ExtendFlight extends React.Component {
                         if (!pairPost.ok) {
                             return pairPost.json().then(e => Promise.reject(e));
                         }
+                        window.location = '/dashboard'
                         return pairPost.json()
                     })
                     // .then((newFlight) => {

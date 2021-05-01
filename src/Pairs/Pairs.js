@@ -6,7 +6,8 @@ export default class Pairs extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dash: false
+            dash: false,
+            stepToggle: false
         }
     }
     handleClickDelete = e => {
@@ -41,6 +42,12 @@ export default class Pairs extends React.Component {
             })
         }
     }
+
+    toggleRecipe = () => {
+        this.setState({
+            stepToggle: !this.state.stepToggle
+        })
+    }
     lootSearchPair() {
         const pair = this.props.pair
         return (
@@ -49,13 +56,18 @@ export default class Pairs extends React.Component {
                     <h3>
                         {pair.recipe_title}
                     </h3>
-                    <img id="flight_image" alt={pair.recipe_title} src={pair.recipe_image_url} />
+                    <img id="flight_image" onClick={() => this.toggleRecipe()}alt={pair.recipe_title} src={pair.recipe_image_url} />
                 </div>
-                <div>
+
+                {/* { this.state.stepToggle === false ? <></> : <DetailTrigger dash={this.state.dash}
+                        entry={pair}
+                    /> } */}
+                <div className="recipe-holder">
                     <DetailTrigger dash={this.state.dash}
                         entry={pair}
                     />
                     <div className="bev_pair">
+                        <h3>Bev Pairing</h3>
                         <p>
                             {pair.beverage_title}
                         </p>
@@ -63,7 +75,7 @@ export default class Pairs extends React.Component {
                             {pair.beverage_description}
                         </p>
                         <a href={pair.url}>
-                            Learn More
+                            Learn More About the Dish
                     </a>
                     </div>
                     <button

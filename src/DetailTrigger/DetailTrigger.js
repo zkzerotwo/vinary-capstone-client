@@ -6,13 +6,20 @@ class DetailTrigger extends React.Component {
         super(props)
         this.state = {
             summary: "",
-            instructions: ""
+            instructions: "",
+            stepToggle: false
         }
     }
     newlineText() {
         const text = this.props.summary;
         const newLine = text.split('\n').map(str => <p>{str}</p>);
         return newLine
+    }
+
+    toggleRecipe = () => {
+        this.setState({
+            stepToggle: true
+        })
     }
     componentDidMount() {
         console.log(this.props)
@@ -77,6 +84,7 @@ class DetailTrigger extends React.Component {
             <ul className="recipe-instruc">
 
                 {newLine}
+                <li><a href={this.props.entry.sourceUrl}>Learn More</a></li>
 
             </ul>
 

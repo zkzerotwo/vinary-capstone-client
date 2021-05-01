@@ -24,7 +24,7 @@ export default class ResultBar extends React.Component {
             return (
                 <li className="search_card box" key={entry.id}>
 
-                    <div>
+                    <div className="search_poster">
 
                         <p>{entry.title}</p>
                         <p>{entry.synopsis}</p>
@@ -32,7 +32,7 @@ export default class ResultBar extends React.Component {
                     </div>
                     <div>
                         <DetailTrigger entry={entry} />
-                        <a href={entry.sourceUrl}>Learn More</a>
+                        
                         {TokenService.hasAuthToken() ? <ExtendFlight imageUrl={imgUrl} entry={entry} /> : ''}
                     </div>
                 </li>
@@ -40,7 +40,7 @@ export default class ResultBar extends React.Component {
         })
         return (
             <section className="search-results">
-                <h3>RESULTS</h3>
+                {/* <h3>RESULTS</h3> */}
                 <hr />
                 <ul className="entries">
                     {entries}

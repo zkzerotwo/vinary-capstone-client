@@ -35,7 +35,7 @@ export default class SearchBar extends React.Component {
                 "wheat"
             ],
             dietConfig: 'vegetarian',
-            allergyConfig: "none",
+            allergyConfig: null,
             searchResults: [],
             imageUrlBase: ""
         }
@@ -179,7 +179,7 @@ export default class SearchBar extends React.Component {
                     </label>
                     <label
                         htmlFor="search-type"
-                    >
+                    >Special Diet?
                         <select
                             id="search-type"
                             name="search-type"
@@ -190,7 +190,7 @@ export default class SearchBar extends React.Component {
                     </label>
                     <label
                         htmlFor="allergy-type"
-                    >
+                    > Allergies?
                         <select
                             id="allergy-type"
                             name="allergy-type"
