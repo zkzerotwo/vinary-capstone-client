@@ -15,6 +15,7 @@ export default class Flight extends React.Component {
             params: {}
         }
     }
+    //Get pairs inside flights
     componentDidMount() {
         console.log(this.props, "prop check")
         // let currentUser = TokenService.getUserId();
@@ -39,6 +40,7 @@ export default class Flight extends React.Component {
 
         console.log(this.state, "fetch check")
     }
+    //delete flight
     handleClickDelete = e => {
         e.preventDefault()
         const flightId = this.props.flight.id
