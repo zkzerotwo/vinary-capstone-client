@@ -42,15 +42,6 @@ export default class SearchBar extends React.Component {
     }
     static defaultProps = {
     }
-
-    // formatQueryParams(params) {
-    //     let searchParams = []
-    //     searchParams = params
-    //     console.log(params, "queryczech")
-    //     const queryItems = Object.keys(params)
-    //         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-    //     return queryItems.join('&');
-    // }
     formatQueryParams(params) {
         const queryItems = Object.keys(params)
             .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
@@ -63,12 +54,10 @@ export default class SearchBar extends React.Component {
             searchResults: []
         })
         // console.log(this.state.queryParams, "new check")
-        // const queryOptions = this.formatQueryParams(this.state.queryParams)
         const endpoint = `${config.SEARCH_ENDPOINT}`
         const pass = `${config.SEARCH_TOKEN}`
         const query = this.formatQueryParams(this.state.queryParams)
         // console.log(query, "submitqueryCheck")
-        // this.state.search
         const options = {
             "method": "GET",
             "headers": {
@@ -149,7 +138,6 @@ export default class SearchBar extends React.Component {
         // console.log(this.state.imageUrlBase, "image")
         const imageBase = this.state.imageUrlBase
         const resultsList = this.state.searchResults
-        // const seriesType = this.state.searchConfig
         const dietType = this.state.dietOptions
             .map(select => {
                 return (

@@ -27,6 +27,7 @@ class NavBar extends React.Component {
                         <h3 className="navbar-button"><NavLink to='/login'>Login</NavLink></h3>
                         <h3 className="navbar-button"><NavLink to='/register'>Sign Up</NavLink></h3>
                     </>}
+                    {/*TODO: Implement random flights functionality */}
                     {/* <h3 className="navbar-button"><NavLink to="/surprise">Roulette</NavLink></h3> */}
             </div>
         )
