@@ -110,7 +110,7 @@ export default class SearchBar extends React.Component {
                 offset: this.state.queryParams.offset,
                 type: type
             },
-            
+
         })
     }
     updateAllergyType(allergen) {
@@ -125,8 +125,8 @@ export default class SearchBar extends React.Component {
                 offset: this.state.queryParams.offset,
                 type: this.state.queryParams.type
             },
-            
-            
+
+
         })
     }
     updateSearchQuery(find) {
@@ -167,6 +167,7 @@ export default class SearchBar extends React.Component {
         return (
             <section className='search-bar'>
                 <form className="recipe_search" onSubmit={e => this.handleSubmit(e)}>
+
                     <label>
                         <input type='text'
                             id='recipe_search'
@@ -177,36 +178,38 @@ export default class SearchBar extends React.Component {
                             required
                         ></input>
                     </label>
-                    <label
-                        htmlFor="search-type"
-                    >Special Diet?
+                    <div className="search-params">
+                        <label
+                            htmlFor="search-type"
+                        >Special Diet?
                         <select
-                            id="search-type"
-                            name="search-type"
-                            defaultValue={this.state.dietConfig}
-                            onChange={e => this.updateDietType(e.target.value)}>
-                            {dietType}
-                        </select>
-                    </label>
-                    <label
-                        htmlFor="allergy-type"
-                    > Allergies?
+                                id="search-type"
+                                name="search-type"
+                                defaultValue={this.state.dietConfig}
+                                onChange={e => this.updateDietType(e.target.value)}>
+                                {dietType}
+                            </select>
+                        </label>
+                        <label
+                            htmlFor="allergy-type"
+                        > Allergies?
                         <select
-                            id="allergy-type"
-                            name="allergy-type"
-                            defaultValue={this.state.allergyConfig}
-                            onLoad={e => this.updateAllergyType(e.target.value)} 
-                            onChange={e => this.updateAllergyType(e.target.value)}>
-                            {allergyType}
-                        </select>
-                    </label>
-                    <button>
-                        Submit!
+                                id="allergy-type"
+                                name="allergy-type"
+                                defaultValue={this.state.allergyConfig}
+                                onLoad={e => this.updateAllergyType(e.target.value)}
+                                onChange={e => this.updateAllergyType(e.target.value)}>
+                                {allergyType}
+                            </select>
+                        </label>
+                        <button>
+                            Submit!
                     </button>
+                    </div>
                 </form>
-                <ResultBar 
-                imgBaseUrl={imageBase} 
-                results={resultsList} />
+                <ResultBar
+                    imgBaseUrl={imageBase}
+                    results={resultsList} />
             </section>
         )
     }
