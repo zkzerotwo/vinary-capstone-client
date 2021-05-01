@@ -142,31 +142,32 @@ img {
 
 .flight_pair {
   padding: 10px;
-  flex: 0 0 90%;
+  flex: 0 0 150vw;
 }
 
 .recipe-poster {
-  width: 50%
+  display: table-cell;
+  width: 50%;
 }
 
 .recipe-instruc {
-  margin: auto;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  /* align-items:; */
   list-style: none;
-  height: 50%;
+  height: 70vw;
+  overflow: scroll;
   padding: 2px;
 }
 
 .pair_list {
   height: 100%;
-  display: flex;
+  display: table;
   width: 100%;
   flex-direction: row;
   margin: auto;
-  
 }
 
 .flight_container {
@@ -213,7 +214,7 @@ section.footer {
   color: white;
 }
 
-._deflightte {
+/* ._deflightte {
   padding: 30px;
   padding-bottom: 75px;
-}
+} */
