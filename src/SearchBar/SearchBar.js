@@ -173,7 +173,7 @@ export default class SearchBar extends React.Component {
                             id='recipe_search'
                             className="recipe_search"
                             name='recipe_search'
-                            placeholder='Search by keyword or genre'
+                            placeholder='Search by dish or cuisine'
                             onChange={e => this.updateSearchQuery(e.target.value)}
                             required
                         ></input>
