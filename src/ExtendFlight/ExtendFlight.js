@@ -110,7 +110,7 @@ export default class ExtendFlight extends React.Component {
         //get user id and load flights
         let currentUser = TokenService.getUserId();
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        console.log(getUserFlightsUrl)
+        // console.log(getUserFlightsUrl)
         fetch(getUserFlightsUrl)
             .then((flights) => {
                 if (!flights.ok)
@@ -118,7 +118,7 @@ export default class ExtendFlight extends React.Component {
                 return flights.json()
             })
             .then((flights) => {
-                console.log(flights, "flight list")
+                // console.log(flights, "flight list")
                 this.setState({
                     flights: flights.flights
                 })
@@ -140,9 +140,9 @@ export default class ExtendFlight extends React.Component {
         // console.log(entryUrl)
         const bevTitle = this.state.beverageTitle.value
         const bevDescription = this.state.beverageDescription.value
-        console.log(bevTitle, bevDescription, "titlechek")
+        // console.log(bevTitle, bevDescription, "titlechek")
         const flightId = parseInt(this.state.flight_id.value)
-        console.log(flightId)
+        // console.log(flightId)
         // Fetch data from recipe ID
         fetch(entryUrl, {
             "method": "GET",
@@ -219,7 +219,7 @@ export default class ExtendFlight extends React.Component {
                 </option>
             )
         })
-        console.log(flightList, "list of flights")
+        // console.log(flightList, "list of flights")
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

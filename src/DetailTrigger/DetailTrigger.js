@@ -7,14 +7,32 @@ class DetailTrigger extends React.Component {
         this.state = {
             summary: "",
             instructions: "Instructions \n and stuff",
-            stepToggle: false
+            stepToggle: false,
+            newLine: []
         }
+    }
+    static defaultProps = {
+        dash: false,
+        
     }
     // newlineText() {
     //     const text = this.props.summary;
     //     const newLine = text.split('\n').map(str => <p>{str}</p>);
     //     return newLine
     // }
+    splitCheck = check => {
+        console.log(check, "datacheck", this.state)
+        const split = check
+        if (!split.includes('\n')) {
+            this.setState({
+                instructions: check
+            })
+        } else {
+            this.setState({
+                instructions: check
+            })
+        }
+    }
 
     // toggleRecipe = () => {
     //     this.setState({
@@ -29,7 +47,8 @@ class DetailTrigger extends React.Component {
         const entryUrl2 = `${entryEndpoint}/${this.props.entry.recipe_id}/information`
         // const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/` + this.props.entry.id + `/information`
         // console.log(entryUrl, "urlcheck")
-        if (!this.props.dash) {
+        if (this.props.dash === false) {
+            // console.log(entryUrl)
             fetch(entryUrl, {
                 "method": "GET",
                 "headers": {
@@ -38,7 +57,6 @@ class DetailTrigger extends React.Component {
                 }
             })
                 .then(response => response.json()
-
                 )
                 .then(response =>
 
@@ -51,6 +69,7 @@ class DetailTrigger extends React.Component {
                     console.error(err);
                 })
         } else {
+            // console.log(entryUrl2)
             fetch(entryUrl2, {
                 "method": "GET",
                 "headers": {
@@ -67,26 +86,35 @@ class DetailTrigger extends React.Component {
                         summary: response.summary,
                         instructions: response.instructions
                     })
+                    // console.log(response)
                 )
                 .catch(err => {
                     console.error(err);
                 })
         }
-        
+        // const text = this.state.instructions;
+        // this.props.newLine = text.split('\n').map(str => `<li>${str}</li>`); 
+        // return newLine
+
 
 
     }
+    
     componentWillUnmount() {
-            this.mounted = false;
-        }
+        this.mounted = false;
+        // this.splitCheck(this.state.instructions)
+        console.log(this.state)
+        
+    }
     render() {
         const text = this.state.instructions;
-        const newLine = text.split('\n').map(str => <li>{str}</li>);
-        console.log(newLine)
+        // const newLine = text.split('\n').map(str => <li>{str}</li>);
+        console.log(this.props.entry)
+        console.log(text, "line check")
         return (
             <ul className="recipe-instruc">
-
-                {newLine}
+                <li>{text}</li>
+                {/* {newLine} */}
                 <li><a href={this.props.entry.sourceUrl}>Learn More</a></li>
 
             </ul>

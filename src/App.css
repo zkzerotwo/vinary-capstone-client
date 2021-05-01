@@ -148,9 +148,10 @@ img {
   /* flex-direction: row; */
   justify-content: flex-start;
   flex-wrap: nowrap;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   list-style: none;
-  width: 100vw;
+  width: 100%;
 }
 
 .entries {

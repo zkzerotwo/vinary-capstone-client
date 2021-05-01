@@ -88,7 +88,7 @@ export default class SearchBar extends React.Component {
             })
             .then(response => response.json())
             .then(response => {
-                console.log(response.results, response.baseUri, "response")
+                // console.log(response.results, response.baseUri, "response")
                 this.setState({
                     searchResults: response.results,
                     imageUrlBase: response.baseUri
