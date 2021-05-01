@@ -96,6 +96,19 @@ button {
   margin: 5px;
 }
 
+textarea {
+  width: 95%;
+  height: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 2px;
+  border-style: ridge;
+  border-color: silver;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+}
+
 .delete_flight {
   margin-bottom: 0px;
 }
@@ -220,7 +233,9 @@ img {
 }
 
 /*Wireframe styles*/
-
+.bev_pair a {
+  color: gold;
+}
 .box {
   /* margin: auto; */
   border-style: ridge;

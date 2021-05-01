@@ -226,7 +226,7 @@ export default class ExtendFlight extends React.Component {
                     {/* <h4>{this.props.entryId}</h4> */}
                     <div className="pair_setup">
                         <label htmlFor='beverage_title'>
-                            Bev Pairing
+                            <h2>Bev Pairing</h2>
       {' '}
                         </label>
                         <input
@@ -242,7 +242,7 @@ export default class ExtendFlight extends React.Component {
                         // && (<ValidationError message={this.validateDropName()} />)
                     }
                     <label htmlFor="description">
-                        Flavor Profile
+                       <h2>Flavor Profile</h2>
                 </label>
                     <textarea
                         id="description"
@@ -254,7 +254,7 @@ export default class ExtendFlight extends React.Component {
                     <label
                         htmlFor="flights"
                     >
-                        Save in *
+                        Save in 
                     <select
                             id="flights"
                             name="flights"

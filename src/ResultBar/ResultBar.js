@@ -26,7 +26,7 @@ export default class ResultBar extends React.Component {
                     <div className="search-wrap">
                         <div className="search_poster">
 
-                            <p>{entry.title}</p>
+                            <h2>{entry.title}</h2>
                             <img id="flight_image" alt={entry.title} src={imgUrl} />
                         </div>
                         <div className="search-deets">
@@ -40,7 +40,7 @@ export default class ResultBar extends React.Component {
         })
         return (
             <section className="search-results">
-                <h3>RESULTS</h3>
+                {/* <h3>RESULTS</h3> */}
                 <hr />
                 <ul className="entries">
                     {entries}
