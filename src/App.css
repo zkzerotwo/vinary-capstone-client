@@ -2,12 +2,6 @@
 
 /* Overall styling*/
 
-/* Static styles. Navbar, header, footer*/
-
-/* body {
-  border: 3px solid white;
-} */
-
 * {
   font-family: 'Inter', sans-serif;
 }
@@ -24,16 +18,19 @@ body {
 
 .App {
   text-align: center;
-  /* padding-bottom: 60px; */
-  /* height: 100%; */
   font-family: Archivo, Helvetica, sans-serif;
-  /* padding-bottom: 60px; */
   min-height: 200vw;
-  /* display: block; */
   margin: 0;
   display: flex;
   flex-direction: column;
 }
+/* Static styles. Navbar, header, footer*/
+
+/* body {
+  border: 3px solid white;
+} */
+
+
 
 .nav {
   margin-top: 0px;
@@ -65,17 +62,11 @@ body {
   background: linear-gradient(
     90deg
     , rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
-  /* margin: auto; */
   border-radius: 50px;
   padding: 5px;
-  /* border-width: 2px;
-  border-style: ridge;
-  border-color: silver;
-  width: 50%; */
 }
 
 .welcome {
-  /* color: white; */
   width: 75%;
   font-size: 15vw;
   border-radius: 50px;
@@ -93,6 +84,21 @@ body {
   height: 100%
 }
 
+section.footer {
+  flex-shrink: 0;
+  border-width: 2px;
+  border-style: ridge;
+  border-color: silver;
+  background-image: url("./images/transparency-white.png");
+}
+
+.foot {
+  flex: 1 0 auto;
+  height: max-content;
+  color: white;
+  margin-bottom: 50px;
+}
+
 /*Forms and buttons*/
 .search-params {
   background: linear-gradient(
@@ -103,6 +109,14 @@ body {
 form {
   font-size: 4vw;
 }
+
+.Login {
+  background-image:  url("./images/transparency-white.png");
+}
+
+.Register {
+  background-image:  url("./images/transparency-white.png");
+}
 input {
   border-width: 2px;
   border-style: ridge;
@@ -112,7 +126,6 @@ input {
   padding-right: 15px;
   margin: 5px;
   font-size: 4vw;
-  /* width: 95%; */
 }
 
 select {
@@ -153,17 +166,7 @@ textarea {
   margin-bottom: 0px;
 }
 
-img {
-  /* width: 100% */
-}
 
-.Login {
-  background-image:  url("./images/transparency-white.png");
-}
-
-.Register {
-  background-image:  url("./images/transparency-white.png");
-}
 #flight_image {
   width: 100%;
   height: auto;
@@ -172,8 +175,6 @@ img {
 .search_card {
   display: flex;
   flex-direction: row;
-  /* display: flex; */
-  /* flex-direction: row; */
   justify-content: flex-start;
   flex-wrap: nowrap;
   overflow-x: scroll;
@@ -185,12 +186,6 @@ img {
 .entries {
   display: flex;
   flex-direction: column;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: flex-start;
-  flex-wrap: nowrap;
-  overflow: auto;
-  list-style: none; */
 }
 
 .search-wrap {
@@ -247,11 +242,7 @@ img {
   height: 100vw;
   overflow: scroll;
   padding: 2px;
-  /* position: absolute; */
-  /* background: rgba(29, 106, 154, 0.72); */
   color: #fff;
-  /* visibility: hidden; */
-  /* opacity: 0; */
 }
 
 .bev_pair a {
@@ -294,37 +285,13 @@ img {
   color: gold;
 }
 .box {
-  /* margin: auto; */
   border-style: ridge;
   border-color: silver;
   border-width: 2px;
   background-image: url("./images/transparent.jpg");
-  /* padding: 5px */
 }
 
-section.footer {
-  flex-shrink: 0;
-  /* color: white; */
-  /* margin-top: auto;
-  height: 75px;
-  margin-top: -75px; */
-  border-width: 2px;
-  border-style: ridge;
-  border-color: silver;
-  background-image: url("./images/transparency-white.png");
-}
-
-.foot {
-  flex: 1 0 auto;
-  height: max-content;
-  color: white;
-  margin-bottom: 50px;
-}
-
-/* ._deflightte {
-  padding: 30px;
-  padding-bottom: 75px;
-} */
+/*Responsive Styles*/
 
 @media only screen and (min-width: 320px) {
   body {
@@ -345,12 +312,10 @@ section.footer {
   flex: 0 0 125vw;
 }
 .search-wrap {
-  /* display: table; */
   width: 150vw;
 }
 textarea {
   width: 95%;
-  /* font-size: 4vw; */
   height: 10vw;
   /* padding-left: 20px;
   padding-right: 20px;
