@@ -45,7 +45,7 @@ export default class Pairs extends React.Component {
         const pair = this.props.pair
         return (
             <>
-                <div>
+                <div className="recipe-poster">
                     <h3>
                         {pair.recipe_title}
                     </h3>
@@ -53,17 +53,19 @@ export default class Pairs extends React.Component {
                 </div>
                 <div>
                     <DetailTrigger dash={this.state.dash}
-                    entry={pair}
+                        entry={pair}
                     />
-                    <p>
-                        {pair.beverage_title}
-                    </p>
-                    <p>
-                        {pair.beverage_description}
-                    </p>
-                    <a href={pair.url}>
-                        Learn More
+                    <div className="bev_pair">
+                        <p>
+                            {pair.beverage_title}
+                        </p>
+                        <p>
+                            {pair.beverage_description}
+                        </p>
+                        <a href={pair.url}>
+                            Learn More
                     </a>
+                    </div>
                     <button
                         className='pair_delete'
                         type='button'

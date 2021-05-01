@@ -1,3 +1,17 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100%;
+  background-image: url("./images/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-color: black;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .App {
   text-align: center;
   /* padding-bottom: 60px; */
@@ -17,17 +31,32 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 50px;
+  height: 15%;
   margin-bottom: 10px;
+  padding-bottom: 5px;
+  background-image:  url("./images/transparency-wine.png");
+}
+
+.navbar-button {
+  background-image:  url("./images/transparent.jpg");
+  margin: auto;
+  max-width: 33%;
+  min-width: 20%;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
+
+.navbar-button a {
+  color:white
 }
 
 .intro-card {
-  margin: auto;
+  /* margin: auto;
   padding: 5px;
   border-width: 2px;
   border-style: ridge;
   border-color: silver;
-  width: 50%;
+  width: 50%; */
 }
 
 .landing {
@@ -75,6 +104,13 @@ img {
   width: 100%
 }
 
+.Login {
+  background-image:  url("./images/transparency-white.png");
+}
+
+.Register {
+  background-image:  url("./images/transparency-white.png");
+}
 #flight_image {
   height: 400px
 }
@@ -105,7 +141,23 @@ img {
 }
 
 .flight_pair {
-  flex: 0 0 100%;
+  padding: 10px;
+  flex: 0 0 90%;
+}
+
+.recipe-poster {
+  width: 50%
+}
+
+.recipe-instruc {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  height: 50%;
+  padding: 2px;
 }
 
 .pair_list {
@@ -113,6 +165,8 @@ img {
   display: flex;
   width: 100%;
   flex-direction: row;
+  margin: auto;
+  
 }
 
 .flight_container {
@@ -137,6 +191,7 @@ img {
   border-style: ridge;
   border-color: silver;
   border-width: 2px;
+  background-image: url("./images/transparent.jpg");
   /* padding: 5px */
 }
 
@@ -146,15 +201,16 @@ section.footer {
   /* margin-top: auto;
   height: 75px;
   margin-top: -75px; */
-  /* border-width: 2px;
+  border-width: 2px;
   border-style: ridge;
   border-color: silver;
-  background-image: url("./images/transparent.jpg"); */
+  background-image: url("./images/transparency-white.png");
 }
 
 .foot {
   flex: 1 0 auto;
   height: max-content;
+  color: white;
 }
 
 ._deflightte {

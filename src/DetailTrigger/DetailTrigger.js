@@ -71,14 +71,14 @@ class DetailTrigger extends React.Component {
     }
     render() {
         const text = this.state.instructions;
-        const newLine = text.split('\n').map(str => <p>{str}</p>);
+        const newLine = text.split('\n').map(str => <li>{str}</li>);
         console.log(newLine)
         return (
-            <div>
+            <ul className="recipe-instruc">
 
                 {newLine}
 
-            </div>
+            </ul>
 
         )
     }

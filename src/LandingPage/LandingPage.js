@@ -24,8 +24,8 @@ export default class LandingPage extends React.Component {
                 <header className="App-header">
                     <NavBar />
                 </header>
-                <h1 className="welcome">Vinary</h1>
-                <div className="intro-card">
+                <h1 className="welcome box">Vinary</h1>
+                <div className="intro-card box">
                     <p>Curate your own superstar food and beverage pairings on the fly! Search the database for delicious recipes and save them to your account with a beverage pairing of your choice. Wine? A cocktail? A tall glass of water? Youru call, but every pairing is a Vinary Pair.</p>
                 </div>
                 <SearchBar />
