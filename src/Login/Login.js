@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 import ValidationError from "../ValidationError"
 import AuthApiService from '../services/auth-api-service'
 import TokenService from '../services/token-service'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
     constructor(props) {
@@ -154,7 +154,7 @@ class Login extends React.Component {
                                     Don't have an account?{" "}
                                 </p>
                                 <p>
-                                    <NavLink to='/register'>Sign up here</NavLink>
+                                    <Link to='/register'>Sign up here</Link>
                                 </p>
                             </div>
                         </form>

@@ -92,10 +92,12 @@ export default class Register extends React.Component {
         for (let value of formData) {
             data[value[0]] = value[1];
         }
+        // console.log(data);
 
         let { user_name,
             password
         } = data;
+        //console.log(user_name, password, repeatPassword);
 
 
         this.setState({ error: null })
@@ -105,9 +107,11 @@ export default class Register extends React.Component {
         })
 
             .then(response => {
+                //console.log('user:', response)
                 TokenService.saveAuthToken(response.authToken)
                 TokenService.saveUserId(response.id)
                 window.location = "/dashboard"
+                // <Redirect push to="/dashboard"/>
             })
 
             .catch(res => {

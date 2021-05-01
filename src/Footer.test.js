@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LandingPage from './LandingPage';
+import Footer from './Footer';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<LandingPage />, div);
+  ReactDOM.render(<Footer />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
