@@ -1,10 +1,7 @@
 import React from 'react'
 import DetailTrigger from '../DetailTrigger/DetailTrigger'
-// import LootBox from '../LootBox/LootBox'
-// import LootboxContext from '../LootboxContext'
 import ExtendFlight from '../ExtendFlight/ExtendFlight'
 import TokenService from '../services/token-service'
-// import AddToLootbox from '../AddToLootbox/AddToLootbox'
 
 export default class ResultBar extends React.Component {
     constructor(props) {
@@ -29,8 +26,8 @@ export default class ResultBar extends React.Component {
                             <img id="flight_image" alt={entry.title} src={imgUrl} />
                         </div>
                         <div className="search-deets">
+                            {/*If logged in, show flight submission form*/}
                             <DetailTrigger entry={entry} />
-                            {/* <a href={entry.sourceUrl}>Learn More</a> */}
                             {TokenService.hasAuthToken() ? <ExtendFlight imageUrl={imgUrl} entry={entry} /> : ''}
                         </div>
                     </div>
@@ -39,7 +36,6 @@ export default class ResultBar extends React.Component {
         })
         return (
             <section className="search-results">
-                {/* <h3>RESULTS</h3> */}
                 <hr />
                 <ul className="entries">
                     {entries}
