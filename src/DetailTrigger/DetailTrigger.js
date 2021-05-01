@@ -15,13 +15,9 @@ class DetailTrigger extends React.Component {
         dash: false,
         
     }
-    // newlineText() {
-    //     const text = this.props.summary;
-    //     const newLine = text.split('\n').map(str => <p>{str}</p>);
-    //     return newLine
-    // }
+    //Check if instructions are parsed with \n
     splitCheck = check => {
-        console.log(check, "datacheck", this.state)
+        // console.log(check, "datacheck", this.state)
         const split = check
         if (!split.includes('\n')) {
             this.setState({
@@ -33,26 +29,20 @@ class DetailTrigger extends React.Component {
             })
         }
     }
-
-    // toggleRecipe = () => {
-    //     this.setState({
-    //         stepToggle: true
-    //     })
-    // }
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
         this.mounted = true;
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const entryUrl = `${entryEndpoint}/${this.props.entry.id}/information`
         const entryUrl2 = `${entryEndpoint}/${this.props.entry.recipe_id}/information`
-        // const url = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/` + this.props.entry.id + `/information`
-        // console.log(entryUrl, "urlcheck")
+        //IDs stored in either id or recipe_id, depending on location
+        //if not in dashboard, load id
         if (this.props.dash === false) {
             // console.log(entryUrl)
             fetch(entryUrl, {
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "d36a838384mshc96686c738af0aap11fd78jsnf972d810e8ef",
+                    "x-rapidapi-key": `${config.SEARCH_TOKEN}`,
                     "x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
                 }
             })
@@ -68,6 +58,7 @@ class DetailTrigger extends React.Component {
                 .catch(err => {
                     console.error(err);
                 })
+                //else load recipe_id
         } else {
             // console.log(entryUrl2)
             fetch(entryUrl2, {
@@ -92,29 +83,18 @@ class DetailTrigger extends React.Component {
                     console.error(err);
                 })
         }
-        // const text = this.state.instructions;
-        // this.props.newLine = text.split('\n').map(str => `<li>${str}</li>`); 
-        // return newLine
-
-
-
     }
-    
     componentWillUnmount() {
         this.mounted = false;
-        // this.splitCheck(this.state.instructions)
-        console.log(this.state)
-        
+        // console.log(this.state)
     }
     render() {
         const text = this.state.instructions;
-        // const newLine = text.split('\n').map(str => <li>{str}</li>);
         console.log(this.props.entry)
         console.log(text, "line check")
         return (
             <ul className="recipe-instruc">
                 <li>{text}</li>
-                {/* {newLine} */}
                 <li><a href={this.props.entry.sourceUrl}>Learn More</a></li>
 
             </ul>
