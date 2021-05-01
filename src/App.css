@@ -294,9 +294,9 @@ textarea {
 }
 
 @media only screen and (min-width: 480px) {
-  body {
+  /* body {
     border: 3px solid green;
-  }
+  } */
   .recipe-poster {
     display: table-cell;
     width: 45%;
@@ -326,9 +326,9 @@ textarea {
 /*Android landscape*/
 
 @media only screen and (min-width: 640px) {
-  body {
+  /* body {
     border: 3px solid pink;
-  }
+  } */
   .flight_pair {
     padding: 10px;
     flex: 0 0 75vw;
