@@ -55,14 +55,12 @@ export default class Dashboard extends React.Component {
     }
     componentDidMount() {
         let currentUser = TokenService.getUserId();
-        // console.log(currentUser, "user id")
 
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
         }
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        console.log(getUserFlightsUrl)
         fetch(getUserFlightsUrl)
             .then((flights) => {
                 if (!flights.ok)
@@ -70,16 +68,13 @@ export default class Dashboard extends React.Component {
                 return flights.json()
             })
             .then((flights) => {
-                // console.log(flights, "flight list")
                 this.setState({
                     flights: flights.flights
-                    // flightsByOwner(flights, currentUser)
                 })
             })
             .catch(
                 (error => this.setState({ error }))
             )
-        // console.log(this.state.flights, "state check")
     }
     render() {
         // Flights mappepd to component
@@ -91,7 +86,6 @@ export default class Dashboard extends React.Component {
                 </li>
             )
         })
-        // console.log(pulledFlights, "loot id czech")
         return (
             <section className="users_flights foot">
                 <div className='_deflightte'>

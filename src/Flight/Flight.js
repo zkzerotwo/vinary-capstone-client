@@ -17,11 +17,7 @@ export default class Flight extends React.Component {
     }
     //Get pairs inside flights
     componentDidMount() {
-        // console.log(this.props, "prop check")
-        // let currentUser = TokenService.getUserId();
         let getPairsInFlights = `${config.AUTH_ENDPOINT}/flights/${this.props.flight.id}/saved`
-        // let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        // console.log(getPairsInFlights, "pair list url")
         fetch(getPairsInFlights)
             .then(pairs => {
                 if (!pairs.ok)

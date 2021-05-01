@@ -47,7 +47,6 @@ export default class ExtendFlight extends React.Component {
                 touched: true
             }
         })
-        // console.log(flightId)
     }
 
     updateBeverageDescription = (description) => {
@@ -65,13 +64,11 @@ export default class ExtendFlight extends React.Component {
                 touched: true
             }
         })
-        console.log(title)
     }
     componentDidMount() {
         //get user id and load flights
         let currentUser = TokenService.getUserId();
         let getUserFlightsUrl = `${config.AUTH_ENDPOINT}/users/${currentUser}/flights`
-        // console.log(getUserFlightsUrl)
         fetch(getUserFlightsUrl)
             .then((flights) => {
                 if (!flights.ok)
@@ -79,7 +76,6 @@ export default class ExtendFlight extends React.Component {
                 return flights.json()
             })
             .then((flights) => {
-                // console.log(flights, "flight list")
                 this.setState({
                     flights: flights.flights
                 })
@@ -92,16 +88,12 @@ export default class ExtendFlight extends React.Component {
     handleSubmit = (e) => {
         //add pairs to selected flight
         e.preventDefault();
-        // console.log(this.props.entryId)
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const { id, servings, sourceUrl, title } = this.props.entry
         const entryUrl = `${entryEndpoint}/${id}/information`
-        // console.log(entryUrl)
         const bevTitle = this.state.beverageTitle.value
         const bevDescription = this.state.beverageDescription.value
-        // console.log(bevTitle, bevDescription, "titlechek")
         const flightId = parseInt(this.state.flight_id.value)
-        // console.log(flightId)
         // Fetch data from recipe ID
         fetch(entryUrl, {
             "method": "GET",
@@ -117,7 +109,6 @@ export default class ExtendFlight extends React.Component {
                 return entryData.json()
             })
             .then(entryData => {
-                // console.log(entryData, "entry data")
                 this.setState({
                     summary: entryData.summary,
                     instructions: entryData.instructions
@@ -133,7 +124,6 @@ export default class ExtendFlight extends React.Component {
                     url: sourceUrl,
                     recipe_image_url: imageUrl
                 }
-                console.log(payload, "payload")
                 fetch(`${config.AUTH_ENDPOINT}/pairs`, {
                     method: 'POST',
                     headers: {
@@ -143,7 +133,6 @@ export default class ExtendFlight extends React.Component {
                     body: JSON.stringify(payload),
                 })
                     .then((pairPost) => {
-                        // console.log(pairPost)
                         if (!pairPost.ok) {
                             return pairPost.json().then(e => Promise.reject(e));
                         }
@@ -161,8 +150,6 @@ export default class ExtendFlight extends React.Component {
 
     //TODO: add submission validation
     render() {
-        // console.log(this.state.flights, "data check")
-        // console.log(this.props.entry, "entry check")
         const flightList = this.state.flights.map(flight => {
             // console.log(flight.title)
             return (

@@ -17,7 +17,6 @@ class DetailTrigger extends React.Component {
     }
     //Check if instructions are parsed with \n
     splitCheck = check => {
-        // console.log(check, "datacheck", this.state)
         const split = check
         if (!split.includes('\n')) {
             this.setState({
@@ -30,7 +29,6 @@ class DetailTrigger extends React.Component {
         }
     }
     componentDidMount() {
-        // console.log(this.props)
         this.mounted = true;
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const entryUrl = `${entryEndpoint}/${this.props.entry.id}/information`
@@ -38,7 +36,6 @@ class DetailTrigger extends React.Component {
         //IDs stored in either id or recipe_id, depending on location
         //if not in dashboard, load id
         if (this.props.dash === false) {
-            // console.log(entryUrl)
             fetch(entryUrl, {
                 "method": "GET",
                 "headers": {
@@ -60,7 +57,6 @@ class DetailTrigger extends React.Component {
                 })
                 //else load recipe_id
         } else {
-            // console.log(entryUrl2)
             fetch(entryUrl2, {
                 "method": "GET",
                 "headers": {
@@ -77,7 +73,6 @@ class DetailTrigger extends React.Component {
                         summary: response.summary,
                         instructions: response.instructions
                     })
-                    // console.log(response)
                 )
                 .catch(err => {
                     console.error(err);
@@ -86,12 +81,9 @@ class DetailTrigger extends React.Component {
     }
     componentWillUnmount() {
         this.mounted = false;
-        // console.log(this.state)
     }
     render() {
         const text = this.state.instructions;
-        // console.log(this.props.entry)
-        // console.log(text, "line check")
         return (
             <ul className="recipe-instruc">
                 <li>{text}</li>

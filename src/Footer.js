@@ -9,8 +9,6 @@ export default class Footer extends React.Component {
                     <p>halc713@gmail.com</p>
                 </div>
                 <div className="socials">
-                    <p>Social</p>
-                    <p>Social</p>
                 </div>
             </section>
         )
