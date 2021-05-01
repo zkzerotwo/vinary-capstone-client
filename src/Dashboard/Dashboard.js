@@ -30,6 +30,7 @@ export default class Dashboard extends React.Component {
         })
     }
     handleDeleteUser = (e) => {
+        //User login
         let currentUser = TokenService.getUserId();
         TokenService.clearAuthToken()
         window.location = '/'
@@ -54,7 +55,7 @@ export default class Dashboard extends React.Component {
     }
     componentDidMount() {
         let currentUser = TokenService.getUserId();
-        console.log(currentUser, "user id")
+        // console.log(currentUser, "user id")
 
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
@@ -69,13 +70,11 @@ export default class Dashboard extends React.Component {
                 return flights.json()
             })
             .then((flights) => {
-                console.log(flights, "flight list")
-
+                // console.log(flights, "flight list")
                 this.setState({
                     flights: flights.flights
                     // flightsByOwner(flights, currentUser)
                 })
-
             })
             .catch(
                 (error => this.setState({ error }))
@@ -83,7 +82,7 @@ export default class Dashboard extends React.Component {
         // console.log(this.state.flights, "state check")
     }
     render() {
-
+        // Flights mappepd to component
         const pulledFlights = this.state.flights
         const userFlights = pulledFlights.map(flight => {
             return (
@@ -92,7 +91,7 @@ export default class Dashboard extends React.Component {
                 </li>
             )
         })
-        console.log(pulledFlights, "loot id czech")
+        // console.log(pulledFlights, "loot id czech")
         return (
             <section className="users_flights foot">
                 <div className='_deflightte'>
@@ -104,9 +103,9 @@ export default class Dashboard extends React.Component {
                         {userFlights}
                     </ul>
                     <button
-                        
                         type='button'
-                        onClick={(e) => { if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
+                        onClick={(e) => { 
+                            if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
                         {' '}
         Delete User
       </button>
