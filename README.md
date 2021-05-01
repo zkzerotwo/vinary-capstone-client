@@ -110,13 +110,24 @@ Search Results Page
 
 
 
-### 6. Front-end Structure - React Components Map (to do later)
-* (Example) __Index.js__ (stateless)
+### 6. Front-end Structure - React Components Map 
+* __Index.js__ (stateless)
     * __App.js__ (stateful)
-        * __LandingPage.js__ (stateful) - gets the _"prop name"_ and the _"callback prop name"_ from the __App.js__
-            * __Login.js__ (stateful) -
-            * __Register.js__ (stateful) -
-        * __Navbar.js__ (stateless) -
+        * __LandingPage.js__ (stateless)
+            * __Navbar.js__ (stateless) 
+            * __SearchBar.js__ (stateful)
+                * __ResultBar.js__ (stateful) - receives props from __Searchbar.js__
+                    * __DetailTrigger__ (stateful) - receives props from __ResultBar__
+                    * __ExtendFlight__
+         * __Login.js__ (stateful) -
+        * __Register.js__ (stateful) -
+        * __Dashboard__ (stateful)
+            * __Navbar.js__ (stateless) 
+            * __NewFlight__ (stateful)
+            * __Flight__ (stateful) - receives props from __Dashboard__
+                * __Pairs__ (stateful) - receives props from __Flight__
+                     * __DetailTrigger__ (stateful) - receives props from __Flight__
+
 
 
 
@@ -368,6 +379,7 @@ Search Results Page
 This is v1.0 of the app, but future enhancements are expected to include:
 * Add a random flight functionality
 * Use another API to match beverages to the pairings
+* Load newly registered users with a complimentary flight
 
 
 
