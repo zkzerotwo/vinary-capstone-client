@@ -3,8 +3,8 @@ Search recipes and curate beverage pairings to share with users
 
 
 
-### 1. Working Prototype (to do later)
-(Example) You can access a working prototype of the React app here: https://your-app-client.herokuapp.com/ and Node app here: https://your-app-server.herokuapp.com/
+### 1. Working Prototype
+(Example) You can access a working prototype of the React app here: https://vinary-capstone-server.herokuapp.com/ and Node app here: https://https://vinary-capstone-client.vercel.app/
 
 
 
