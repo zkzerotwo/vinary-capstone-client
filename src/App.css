@@ -112,7 +112,8 @@ img {
   background-image:  url("./images/transparency-white.png");
 }
 #flight_image {
-  height: 400px
+  width: 100%;
+  height: auto;
 }
 
 .search_card {
@@ -138,12 +139,19 @@ img {
   list-style: none; */
 }
 
+.search-wrap {
+  display: table;
+    width: 200vw;
+
+}
 .search_poster {
-  width: 50vw
+  width: 120vw;
+  display: table-cell;
 }
 
 .search-deets {
-  width: 50vw
+  width: 100vw;
+  display: table-cell;
 }
 
 .users_flights {

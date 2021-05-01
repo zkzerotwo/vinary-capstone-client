@@ -16,7 +16,7 @@ class DetailTrigger extends React.Component {
     }
     componentDidMount() {
         console.log(this.props)
-
+        this.mounted = true;
         const entryEndpoint = `${config.API_ENDPOINT_SAVE}`
         const entryUrl = `${entryEndpoint}/${this.props.entry.id}/information`
         const entryUrl2 = `${entryEndpoint}/${this.props.entry.recipe_id}/information`
@@ -36,7 +36,7 @@ class DetailTrigger extends React.Component {
                 .then(response =>
 
                     this.setState({
-                        summary: response.summary,
+                        summary: this.props.entry.summary,
                         instructions: response.instructions
                     })
                 )
@@ -65,10 +65,13 @@ class DetailTrigger extends React.Component {
                     console.error(err);
                 })
         }
-
+        
 
 
     }
+    componentWillUnmount() {
+            this.mounted = false;
+        }
     render() {
         const text = this.state.instructions;
         const newLine = text.split('\n').map(str => <li>{str}</li>);
