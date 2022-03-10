@@ -55,7 +55,6 @@ export default class Dashboard extends React.Component {
     }
     componentDidMount() {
         let currentUser = TokenService.getUserId();
-
         //if the user is not logged in, send him to landing page
         if (!TokenService.hasAuthToken()) {
             window.location = '/'
@@ -98,11 +97,12 @@ export default class Dashboard extends React.Component {
                     </ul>
                     <button
                         type='button'
-                        onClick={(e) => { 
-                            if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) }; }}>
+                        onClick={(e) => {
+                            if (window.confirm('Are you sure you want to delete your account?')) { this.handleDeleteUser(e) };
+                        }}>
                         {' '}
-        Delete User
-      </button>
+                        Delete User
+                    </button>
                 </div>
             </section>
         )
